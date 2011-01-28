@@ -157,8 +157,6 @@ else
 	echo "It was already added. Good to go"
 fi
 
-exit
-
 ct=`curl -s https://wincent.com/products/command-t | grep releases | head -1 | cut -d\" -f2`
 cd /tmp
 vba=$( echo "$ct" | ruby -ruri -e 'puts File.basename(gets.chomp)' )
