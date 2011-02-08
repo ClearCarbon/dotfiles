@@ -136,10 +136,13 @@ if has('gui_running')
   " Turn off toolbar and menu
   set guioptions-=T
   set guioptions-=m
-  colorscheme molokai
-  " vividchalk, inkpot, xoria256
+  " colorscheme molokai
+  " colorscheme vividchalk
+  " colorscheme inkpot
+  " coloscheme xoria256
+  colorscheme ir_black
 else
-  colorscheme molokai
+  colorscheme ir_black
 end
 
 " Very magic regexes in searches

@@ -116,6 +116,9 @@ get_repo "itspriddle" "vim-jquery"
 echo "Installing xoria256"
 get_repo "guns" "xoria256.vim"
 
+echo "Installing ir_black"
+get_repo "wgibbs" "vim-irblack"
+
 echo "Installing molokai"
 get_repo "andyferra" "molokai"
 
@@ -124,6 +127,12 @@ get_repo "vim-scripts" "minibufexplorerpp"
 
 echo "Installing vim-ruby-refactoring"
 get_repo "ecomba" "vim-ruby-refactoring"
+
+echo "Installing Command-T"
+get_repo "wincent" "Command-T"
+cd Command-T
+rake make
+cd ..
 
 
 #cd $DOTVIM/colors
@@ -155,34 +164,5 @@ then
 	echo "$pathogen_cmd" >> ~/.vimrc
 else
 	echo "It was already added. Good to go"
-fi
-
-ct=`curl -s https://wincent.com/products/command-t | grep releases | head -1 | cut -d\" -f2`
-cd /tmp
-vba=$( echo "$ct" | ruby -ruri -e 'puts File.basename(gets.chomp)' )
-echo "***********************************************************"
-echo "Would you like to download and install Command-T: $vba? If so, type yes. Anything else will bypass."
-echo "***********************************************************"
-read answer
-if [ "$answer" == 'yes' ]
-then
-    echo "Installing Command-T plugin"
-    wget $ct
-
-    echo ""
-    echo ""
-    echo "***********************************************************"
-    echo "Vim will start, then :so %"
-    echo "When the script is done it'll compile the ruby extension"
-    echo "***********************************************************"
-    sleep 3
-    vim /tmp/$vba
-    sleep 3
-    cd ~/.vim/ruby/command-t
-    ruby extconf.rb
-    make
-else
-    echo "Skipping install, just run this script again if you want it"
-    echo "***********************************************************"
 fi
 
