@@ -1,9 +1,7 @@
-My vimrc and addon install script. I use the word 'my' loosely. Both files have been patched
+My vimrc and addon installation script. I use the word 'my' loosely. Both files have been patched
 together from many different sources and customised to my own tastes, particularly the install
-script.
+script (can't remember who to give credit to).
 
-Check this out to your ~/.vim directory. Create a symbolic link
-
-ln -s ~/.vim/vimrc ~/.vimrc
-
-and then run the install script.
+1. Clone this to your ~/.vim directory.
+2. Create a symbolic link ln -s ~/.vim/vimrc ~/.vimrc
+3. Then run the install script.
