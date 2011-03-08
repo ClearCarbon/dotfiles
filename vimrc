@@ -1,6 +1,6 @@
 filetype off
-call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
 
 " more secure
 set modelines=0
@@ -136,13 +136,13 @@ if has('gui_running')
   " Turn off toolbar and menu
   set guioptions-=T
   set guioptions-=m
-  " colorscheme molokai
+  colorscheme molokai
   " colorscheme vividchalk
   " colorscheme inkpot
   " coloscheme xoria256
-  colorscheme ir_black
+  " colorscheme ir_black
 else
-  colorscheme ir_black
+  " colorscheme ir_black
 end
 
 " Very magic regexes in searches
@@ -191,6 +191,9 @@ vmap <C-x> "+c
 vmap <C-c> "+yi
 vmap <C-v> c<ESC>"+p
 imap <C-v> <ESC>"+pa
+
+" fix a recent bug in commandT
+"nmap <unique> <silent> <Leader>r :CommandT<CR>
 
 autocmd BufRead *.phtml set filetype=xml
 
@@ -242,6 +245,8 @@ set makeprg=php\ -l\ %
 "	1,$!xmllint --format --recover -
 "endfunction
 "command! PrettyXML call DoPrettyXML()
+
+nmap <Leader>f :% ! ~/.vim/phpCB --space-after-if --space-after-switch --space-after-while --one-true-brace-function-declaration --extra-padding-for-case-statement --change-shell-comment-to-double-slashes-comment --force-true-false-null-contant-lowercase --align-equal-statements --comment-rendering-style PHPDoc<CR>
 
 " Minibufexpl
 let g:miniBufExplMapWindowNavVim = 1
