@@ -98,6 +98,9 @@ get_repo "chrisbra" "csv.vim"
 echo "Installing rvm.vim"
 get_repo "csexton" "rvm.vim"
 
+echo "Installing scss-syntax"
+get_repo "cakebaker" "scss-syntax.vim"
+
 echo "Installing vim-javascript"
 get_repo "pangloss" "vim-javascript"
 
@@ -128,9 +131,13 @@ get_repo "vim-scripts" "minibufexplorerpp"
 echo "Installing vim-ruby-refactoring"
 get_repo "ecomba" "vim-ruby-refactoring"
 
+echo "Installing vim-coffee-script"
+get_repo "kchmck" "vim-coffee-script"
+
 echo "Installing Command-T"
 get_repo "wincent" "Command-T"
 cd Command-T
+rvm system
 rake make
 cd ..
 
