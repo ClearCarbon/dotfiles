@@ -73,9 +73,9 @@ get_repo "mileszs" "ack.vim"
 echo "Installing supertab"
 get_repo "tsaleh" "vim-supertab"
 
-echo "Installing sparkup and copying the vim files"
-get_repo "rstacruz" "sparkup"
-cp -R sparkup/vim/ftplugin sparkup/
+#echo "Installing sparkup and copying the vim files"
+#get_repo "rstacruz" "sparkup"
+#cp -R sparkup/vim/ftplugin sparkup/
 
 echo "Installing vim-yankring"
 get_repo "chrismetcalf" "vim-yankring"
@@ -88,9 +88,6 @@ get_repo "michaeljsmith" "vim-indent-object"
 
 echo "Installing git-vim"
 get_repo "motemen" "git-vim"
-
-echo "Installing vimerl"
-get_repo "oscarh" "vimerl"
 
 echo "Installing csv"
 get_repo "chrisbra" "csv.vim"
@@ -125,14 +122,23 @@ get_repo "wgibbs" "vim-irblack"
 echo "Installing molokai"
 get_repo "andyferra" "molokai"
 
-echo "Installing minibufexplorerpp"
-get_repo "vim-scripts" "minibufexplorerpp"
+echo "Installing lustyjuggler"
+get_repo "sjbach" "lusty"
 
 echo "Installing vim-ruby-refactoring"
 get_repo "ecomba" "vim-ruby-refactoring"
 
 echo "Installing vim-coffee-script"
 get_repo "kchmck" "vim-coffee-script"
+
+echo "Installing bufkill"
+get_repo "vim-scripts" "bufkill.vim"
+
+echo "Installing vim-mustang"
+get_repo "cschlueter" "vim-mustang"
+
+echo "Installing vim-colors-solarized"
+get_repo "altercation" "vim-colors-solarized"
 
 echo "Installing Command-T"
 get_repo "wincent" "Command-T"
