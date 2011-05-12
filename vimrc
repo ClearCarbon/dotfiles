@@ -1,11 +1,22 @@
-" not bothered about vi compatibility
+
+" This vimrc uses vundle, so install it first
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Setup
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Not bothered about vi compatibility
 " This must be first, because it changes other options as side effect
 set nocompatible
 
-filetype off
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
+filetype off " required!
+set rtp+=~/.vim/vundle.git/ 
+call vundle#rc()
+filetype plugin indent on " required!
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" General
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " more secure
 set modelines=0
@@ -41,7 +52,6 @@ set wildmenu
 " options are), also add the following
 set wildmode=list:longest
 
-
 set history=1000 " increase command history
 
 set undolevels=1000
@@ -52,12 +62,6 @@ set cpoptions+=$
 " search highlights on, and dynamic searching
 set hlsearch
 set incsearch
-nnoremap <leader><space> :noh<cr>
-
-" The following will make tabs and trailing
-" spaces visible when requested
-set listchars=tab:>-,trail:·,eol:$
-nmap <silent> <leader>s :set nolist!<cr>
 
 " These two options, when set together, will
 " make /-style searches case-sensitive only
@@ -102,76 +106,72 @@ set relativenumber
 " allow hiding buffers with pending changes
 set hidden
 
+" defaults
+set tabstop=2
+set expandtab
+set shiftwidth=2
 
+" use multiple of shiftwidth when indenting with '<' and '>'
+set shiftround
 
-" map F2 to toggle nerd tree
-map <F2> :NERDTreeToggle<cr>
+" set show matching parenthesis
+set showmatch
 
-map <F3> :TlistToggle<cr>
+set softtabstop=2
 
-" map <F4> :TMiniBufExplorer<cr>
+set clipboard=unnamed
 
-nnoremap <silent> <F5> :YRShow<cr>
-inoremap <silent> <F5> <ESC>:YRShow<cr>
+" show the statusline all the time
+set laststatus=2
 
-" map leader-W to strip white space
-nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
+" save undo history in file
+set undofile
+set undodir=~/.vim/undo
 
-" map for ack
-let g:ackprg="ack-grep -H --nocolor --nogroup --column"
-nnoremap <leader>a :Ack
-
-nnoremap <leader>b :LustyJuggler<CR>
-
-" fold html tag
-nnoremap <leader>ft Vatzf
-
-" Quickly edit/reload the vimrc file
-" open vimrc in vertically split window
-nmap <silent> <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<CR>
-nmap <silent> <leader>sv :so $MYVIMRC<CR>
-
-" double j for escape
-inoremap jj <ESC>
-
-" reselect the text that was just pasted
-nnoremap <leader>v V`]
+" add some stuff to the statusline
+" removed this %{strftime(\"%d/%m/%y\ -\ %H:%M\")}\
+" because vim-rails didnt like it
+"set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{fugitive#statusline()}
+"set statusline=[%n]\ %<%.99f\ %h%w%m%r%y%{exists('g:loaded_rvm')?rvm#statusline():''}%=%-16(\ %l,%c-%v\ %)%P
+set statusline=[%n]\ %<%.99f\ %h%w%m%r%y%{exists('g:loaded_fugitive')?fugitive#statusline():''}%{exists('g:loaded_rvm')?rvm#statusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
 " Look for the file in the current directory,
 " then south until you reach home.
-set tags=tags;~/
+"set tags=tags;~/
 
-" w!! lets you write with sudo, even after loading the file
-cmap w!! w !sudo tee % >/dev/null
+" save on losing focus
+"au FocusLost * :wa
+" turned off to control when to trigger an autotest
 
-" Who needs .gvimrc?
-if has('gui_running')
-  set encoding=utf-8
-  "set guifont=Monospace\ Bold\ 9
-  set guifont=Bitstream\ Vera\ Sans\ Mono\ 9
-  " Turn off toolbar and menu
-  set guioptions-=T
-  set guioptions-=m
-  " colorscheme mustang
-  " colorscheme molokai
-  " colorscheme vividchalk
-  " colorscheme inkpot
-  set background=dark
-  colorscheme solarized
-  " colorscheme ir_black
-else
-  " colorscheme ir_black
-  set background=dark
-  colorscheme solarized
-end
+" Set to auto read when a file is changed from the outside
+set autoread
+
+" With a map leader it's possible to do extra key combinations
+" like <leader>w saves the current file
+let mapleader = ","
+let g:mapleader = ","
+
+" When vimrc is edited, reload it
+autocmd! bufwritepost vimrc source $MYVIMRC
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Mappings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Fast saving
+nmap <leader>w :w!<cr>
+
+nnoremap <leader><space> :noh<cr>
+
+" Quickly edit/reload the vimrc file
+" open vimrc in vertically split window
+nmap <silent> <leader>e <C-w><C-v><C-l>:e $MYVIMRC<CR>
+nmap <silent> <leader>v :so $MYVIMRC<CR>
 
 " Very magic regexes in searches
 nnoremap / /\v
 vnoremap / /\v
-
-" use tab to move around brackets
-"nnoremap <tab> %
-"vnoremap <tab> %
 
 " dont use cursor keys!
 nnoremap <up> <nop>
@@ -180,9 +180,6 @@ nnoremap <down> <nop>
 "inoremap <down> <nop>
 "inoremap <left> <nop>
 "inoremap <right> <nop>
-
-" Close the current buffer
-"map <leader>bd :bd<cr>
 
 " Close all the buffers
 map <leader>ba :1,300 bd!<cr>
@@ -202,15 +199,6 @@ nnoremap k gk
 " make ; do the same thing as :
 nnoremap ; :
 
-" save on losing focus
-"au FocusLost * :wa
-" turned off to control when to trigger an autotest
-
-" avoid pressing F1
-inoremap <F1> <ESC>
-nnoremap <F1> <ESC>
-vnoremap <F1> <ESC>
-
 " handle long lines
 set nowrap
 "set wrap
@@ -225,29 +213,79 @@ vmap <C-v> c<ESC>"+p
 imap <C-v> <ESC>"+pa
 
 
-" fix a recent bug in commandT
-"nmap <unique> <silent> <Leader>r :CommandT<CR>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Unused mappings ATM
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-autocmd BufRead *.phtml set filetype=xml
+" The following will make tabs and trailing
+" spaces visible when requested
+"set listchars=tab:>-,trail:·,eol:$
+"nmap <silent> <leader>s :set nolist!<cr>
 
-" defaults
-set tabstop=2
-set expandtab
-set shiftwidth=2
+"map leader-W to strip white space
+"nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
-" use multiple of shiftwidth when indenting with '<' and '>'
-set shiftround
+" fold html tag
+"nnoremap <leader>ft Vatzf
 
-" set show matching parenthesis
-set showmatch
+" double j for escape
+"inoremap jj <ESC>
 
-set softtabstop=2
+" reselect the text that was just pasted
+"nnoremap <leader>v V`]
 
-set clipboard=unnamed
+" w!! lets you write with sudo, even after loading the file
+"cmap w!! w !sudo tee % >/dev/null
+
+" use tab to move around brackets
+"nnoremap <tab> %
+"vnoremap <tab> %
+
+" Close the current buffer
+"map <leader>bd :bd<cr>
+
+" avoid pressing F1
+"inoremap <F1> <ESC>
+"nnoremap <F1> <ESC>
+"vnoremap <F1> <ESC>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" PHP
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+if has("autocmd")
+  autocmd BufRead *.phtml set filetype=xml
+  " highlights interpolated variables in sql strings and does sql-syntax highlighting. yay
+  "autocmd FileType php let php_sql_query=1
+  " does exactly that. highlights html inside of php strings
+  "autocmd FileType php let php_htmlInStrings=1
+  " discourages use oh short tags. c'mon its deprecated remember
+  "autocmd FileType php let php_noShortTags=1
+  " automagically folds functions & methods.
+  "autocmd FileType php let php_folding=1
+
+  " auto switch to folder where editing file
+  "autocmd BufEnter * cd %:p:h
+
+  " set auto-highlighting of matching brackets for php only
+  "autocmd FileType php DoMatchParen
+  "autocmd FileType php hi MatchParen ctermbg=blue guibg=lightblue
+endif
+
 
 " set "make" command when editing php files
 set makeprg=php\ -l\ %
 "set errorformat=%m\ in\ %f\ on\ line\ %l
+
+"nmap <Leader>f :% ! ~/.vim/phpCB --space-after-if --space-after-switch --space-after-while --one-true-brace-function-declaration
+"--extra-padding-for-case-statement --change-shell-comment-to-double-slashes-comment --force-true-false-null-contant-lowercase 
+"--align-equal-statements --comment-rendering-style PHPDoc<CR>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" XML
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Indent XML readably
 "function! DoPrettyXML()
@@ -255,66 +293,128 @@ set makeprg=php\ -l\ %
 "endfunction
 "command! PrettyXML call DoPrettyXML()
 
-"nmap <Leader>f :% ! ~/.vim/phpCB --space-after-if --space-after-switch --space-after-while --one-true-brace-function-declaration --extra-padding-for-case-statement --change-shell-comment-to-double-slashes-comment --force-true-false-null-contant-lowercase --align-equal-statements --comment-rendering-style PHPDoc<CR>
-
-" Minibufexpl
-"let g:miniBufExplMapWindowNavVim = 1
-"let g:miniBufExplMapWindowNavArrows = 1
-"let g:miniBufExplMapCTabSwitchBufs = 1
-"let g:miniBufExplModSelTarget = 1
-"let g:miniBufExplorerMoreThanOne = 1
 
 
-" show the statusline all the time
-set laststatus=2
-
-" save undo history in file
-set undofile
-set undodir=~/.vim/undo
-
-" add some stuff to the statusline
-" removed this %{strftime(\"%d/%m/%y\ -\ %H:%M\")}\
-" because vim-rails didnt like it
-"set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{fugitive#statusline()}
-"set statusline=[%n]\ %<%.99f\ %h%w%m%r%y%{exists('g:loaded_rvm')?rvm#statusline():''}%=%-16(\ %l,%c-%v\ %)%P
-set statusline=[%n]\ %<%.99f\ %h%w%m%r%y%{exists('g:loaded_fugitive')?fugitive#statusline():''}%{exists('g:loaded_rvm')?rvm#statusline():''}%=%-16(\ %l,%c-%v\ %)%P
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Other languages
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 if has("autocmd")
-
-"autocmd Filetype sh set ts=4 shiftwidth=2 expandtab
-"autocmd Filetype ruby,xml,html set ts=8 shiftwidth=2 expandtab
-"autocmd Filetype python set ts=4 shiftwidth=4 expandtab
-"autocmd Filetype xml,xslt,diff,ruby color desert
-"autocmd Filetype xml,xslt,diff,ruby set expandtab
-
-" php extras
-
-" highlights interpolated variables in sql strings and does sql-syntax highlighting. yay
-"autocmd FileType php let php_sql_query=1
-" does exactly that. highlights html inside of php strings
-"autocmd FileType php let php_htmlInStrings=1
-" discourages use oh short tags. c'mon its deprecated remember
-"autocmd FileType php let php_noShortTags=1
-" automagically folds functions & methods.
-"autocmd FileType php let php_folding=1
-
-" auto switch to folder where editing file
-"autocmd BufEnter * cd %:p:h
-
-" set auto-highlighting of matching brackets for php only
-"autocmd FileType php DoMatchParen
-"autocmd FileType php hi MatchParen ctermbg=blue guibg=lightblue
-
-" autocomplete funcs and identifiers for languages
-"autocmd FileType python set omnifunc=pythoncomplete#Complete
-"autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-"autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-"autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-"autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-"autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-"autocmd FileType c set omnifunc=ccomplete#Complete
-
-  au BufNewFile,BufRead *.mustache set syntax=mustache
-
+  autocmd BufNewFile,BufRead *.mustache set syntax=mustache
 endif
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Display
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+set background=dark
+set encoding=utf-8
+set guifont=Bitstream\ Vera\ Sans\ Mono\ 9
+" Turn off toolbar and menu
+set guioptions-=T
+set guioptions-=m
+  
+" If need be use this 
+if has('gui_running')
+else
+  set t_Co=256
+end
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Bundles
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" original repos on github
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-haml'
+Bundle 'tpope/vim-git'
+Bundle 'tpope/vim-cucumber'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-unimpaired'
+Bundle 'tpope/vim-abolish'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-vividchalk'
+Bundle 'tpope/vim-afterimage'
+Bundle 'tpope/vim-ragtag'
+
+Bundle 'lokaltog/vim-easymotion'
+Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'csexton/rvm.vim'
+Bundle 'msanders/snipmate.vim'
+
+Bundle 'scrooloose/nerdcommenter'
+
+" non github repos
+Bundle 'git://git.wincent.com/command-t.git'
+
+Bundle "ack.vim"
+Bundle "jQuery"
+
+" Colour schemes
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'peaksea'
+"get_repo "guns" "xoria256.vim"
+"get_repo "wgibbs" "vim-irblack"
+"get_repo "andyferra" "molokai"
+
+" possible future bundles
+"scrooloose" "nerdtree"
+"scrooloose" "syntastic"
+"vim-ruby" "vim-ruby"
+"mhz" "vim-matchit"
+"astashov" "vim-ruby-debugger"
+"jc00ke" "mustache.vim"
+"jc00ke" "taglist.vim"
+"tsaleh" "vim-supertab"
+"chrismetcalf" "vim-yankring"
+"chrismetcalf" "vim-rainbow"
+"michaeljsmith" "vim-indent-object"
+"chrisbra" "csv.vim"
+"cakebaker" "scss-syntax.vim"
+"pangloss" "vim-javascript"
+"ZeusTheTrueGod" "vim-format-js"
+"kana" "vim-textobj-user"
+"nelstrom" "vim-textobj-rubyblock"
+"sjbach" "lusty"
+"ecomba" "vim-ruby-refactoring"
+"kchmck" "vim-coffee-script"
+"vim-scripts" "bufkill.vim"
+"cschlueter" "vim-mustang"
+"vim-scripts" "L9"
+"vim-scripts" "FuzzyFinder"
+"int3" "vim-extradite"
+"sjl" "gundo.vim"
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Bundles config
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" map for ack
+let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+nnoremap <leader>a :Ack
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Unused atm
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"nnoremap <leader>b :LustyJuggler<CR>
+" map F2 to toggle nerd tree
+"map <F2> :NERDTreeToggle<cr>
+"map <F3> :TlistToggle<cr>
+"map <F4> :TMiniBufExplorer<cr>
+"nnoremap <silent> <F5> :YRShow<cr>
+"inoremap <silent> <F5> <ESC>:YRShow<cr>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Display after bundles
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+colorscheme solarized
+" If need be use this 
+if has('gui_running')
+else
+end
 
