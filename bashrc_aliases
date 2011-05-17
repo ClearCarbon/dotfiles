@@ -1,0 +1,29 @@
+
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+alias ack="ack-grep -i -a"
+
+# some sillyness from the interweb
+alias rmatrix='echo -ne "\e[31m" ; while true ; do echo -ne "\e[$(($RANDOM % 2 + 1))m" ; tr -c "[:print:]" " " < /dev/urandom | dd count=1 bs=50 2> /dev/null ; done'
+alias gmatrix='echo -ne "\e[32m" ; while true ; do echo -ne "\e[$(($RANDOM % 2 + 1))m" ; tr -c "[:print:]" " " < /dev/urandom | dd count=1 bs=50 2> /dev/null ; done'
+
+export PATH=/var/lib/gems/1.8/bin:$PATH
+export ZEND_TOOL_INCLUDE_PATH=~/library/ZendFramework-1.10.6/library
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+
+alias v='gvim --remote-silent'
+alias g='git'
+alias be='bundle exec'
+
+# Autocomplete for 'g' as well
+complete -o default -o nospace -F _git g
+
+export TERM=xterm-256color
+export EDITOR='gvim --remote-silent'
+
+export GPGKEY=F6D1428E

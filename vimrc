@@ -351,6 +351,7 @@ Bundle 'scrooloose/nerdcommenter'
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
 
+" on debian/ubuntu sudo ln -s /usr/bin/ack-grep /usr/local/bin/ack
 Bundle "ack.vim"
 Bundle "jQuery"
 Bundle "bufkill.vim"
