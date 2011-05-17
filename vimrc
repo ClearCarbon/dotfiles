@@ -10,7 +10,7 @@
 set nocompatible
 
 filetype off " required!
-set rtp+=~/.vim/vundle.git/ 
+set rtp+=~/.vim/vundle.git/
 call vundle#rc()
 filetype plugin indent on " required!
 
@@ -279,7 +279,7 @@ set makeprg=php\ -l\ %
 "set errorformat=%m\ in\ %f\ on\ line\ %l
 
 "nmap <Leader>f :% ! ~/.vim/phpCB --space-after-if --space-after-switch --space-after-while --one-true-brace-function-declaration
-"--extra-padding-for-case-statement --change-shell-comment-to-double-slashes-comment --force-true-false-null-contant-lowercase 
+"--extra-padding-for-case-statement --change-shell-comment-to-double-slashes-comment --force-true-false-null-contant-lowercase
 "--align-equal-statements --comment-rendering-style PHPDoc<CR>
 
 
@@ -314,11 +314,11 @@ set guifont=Bitstream\ Vera\ Sans\ Mono\ 9
 " Turn off toolbar and menu
 set guioptions-=T
 set guioptions-=m
-  
-" If need be use this 
+set t_Co=256
+
+" If need be use this
 if has('gui_running')
 else
-  set t_Co=256
 end
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -353,6 +353,7 @@ Bundle 'git://git.wincent.com/command-t.git'
 
 Bundle "ack.vim"
 Bundle "jQuery"
+Bundle "bufkill.vim"
 
 " Colour schemes
 Bundle 'altercation/vim-colors-solarized'
@@ -413,7 +414,7 @@ nnoremap <leader>a :Ack
 " Display after bundles
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme solarized
-" If need be use this 
+" If need be use this
 if has('gui_running')
 else
 end
