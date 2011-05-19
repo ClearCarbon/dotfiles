@@ -10,11 +10,7 @@ alias ack="ack-grep -i -a"
 alias rmatrix='echo -ne "\e[31m" ; while true ; do echo -ne "\e[$(($RANDOM % 2 + 1))m" ; tr -c "[:print:]" " " < /dev/urandom | dd count=1 bs=50 2> /dev/null ; done'
 alias gmatrix='echo -ne "\e[32m" ; while true ; do echo -ne "\e[$(($RANDOM % 2 + 1))m" ; tr -c "[:print:]" " " < /dev/urandom | dd count=1 bs=50 2> /dev/null ; done'
 
-export PATH=/var/lib/gems/1.8/bin:$PATH
-export ZEND_TOOL_INCLUDE_PATH=~/library/ZendFramework-1.10.6/library
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
-[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+#export PATH=/var/lib/gems/1.8/bin:$PATH
 
 alias v='gvim --remote-silent'
 alias g='git'
