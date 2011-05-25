@@ -345,6 +345,7 @@ Bundle 'lokaltog/vim-easymotion'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'csexton/rvm.vim'
 Bundle 'msanders/snipmate.vim'
+Bundle 'kchmck/vim-coffee-script'
 
 Bundle 'scrooloose/nerdcommenter'
 
@@ -383,7 +384,6 @@ Bundle 'peaksea'
 "nelstrom" "vim-textobj-rubyblock"
 "sjbach" "lusty"
 "ecomba" "vim-ruby-refactoring"
-"kchmck" "vim-coffee-script"
 "vim-scripts" "bufkill.vim"
 "cschlueter" "vim-mustang"
 "vim-scripts" "L9"
