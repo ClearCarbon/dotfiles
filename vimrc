@@ -249,6 +249,14 @@ imap <C-v> <ESC>"+pa
 "nnoremap <F1> <ESC>
 "vnoremap <F1> <ESC>
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Ruby
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+if has("autocmd")
+  "autocmd BufRead *.phtml set filetype=xml
+  autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PHP
@@ -257,9 +265,9 @@ imap <C-v> <ESC>"+pa
 if has("autocmd")
   autocmd BufRead *.phtml set filetype=xml
   " highlights interpolated variables in sql strings and does sql-syntax highlighting. yay
-  "autocmd FileType php let php_sql_query=1
+  autocmd FileType php let php_sql_query=1
   " does exactly that. highlights html inside of php strings
-  "autocmd FileType php let php_htmlInStrings=1
+  autocmd FileType php let php_htmlInStrings=1
   " discourages use oh short tags. c'mon its deprecated remember
   "autocmd FileType php let php_noShortTags=1
   " automagically folds functions & methods.
@@ -271,6 +279,7 @@ if has("autocmd")
   " set auto-highlighting of matching brackets for php only
   "autocmd FileType php DoMatchParen
   "autocmd FileType php hi MatchParen ctermbg=blue guibg=lightblue
+  autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 endif
 
 
@@ -349,6 +358,8 @@ Bundle 'kchmck/vim-coffee-script'
 
 Bundle 'scrooloose/nerdcommenter'
 
+Bundle 'dchelimsky/sweet-rspec-vim'
+
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
 
@@ -356,6 +367,11 @@ Bundle 'git://git.wincent.com/command-t.git'
 Bundle "ack.vim"
 Bundle "jQuery"
 Bundle "bufkill.vim"
+
+Bundle "ervandew/supertab"
+
+" php
+Bundle "shawncplus/phpcomplete.vim"
 
 " Colour schemes
 Bundle 'altercation/vim-colors-solarized'
@@ -414,7 +430,8 @@ nnoremap <leader>a :Ack
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Display after bundles
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-colorscheme solarized
+"colorscheme solarized
+colorscheme peaksea
 " If need be use this
 if has('gui_running')
 else
