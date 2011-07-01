@@ -1,5 +1,5 @@
-
-" This vimrc uses vundle, so install it first
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Setup
@@ -8,11 +8,6 @@
 " Not bothered about vi compatibility
 " This must be first, because it changes other options as side effect
 set nocompatible
-
-filetype off " required!
-set rtp+=~/.vim/vundle.git/
-call vundle#rc()
-filetype plugin indent on " required!
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General
@@ -329,84 +324,6 @@ set t_Co=256
 if has('gui_running')
 else
 end
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Bundles
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" original repos on github
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-haml'
-Bundle 'tpope/vim-git'
-Bundle 'tpope/vim-cucumber'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'tpope/vim-abolish'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-markdown'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-vividchalk'
-Bundle 'tpope/vim-afterimage'
-Bundle 'tpope/vim-ragtag'
-
-Bundle 'lokaltog/vim-easymotion'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'csexton/rvm.vim'
-Bundle 'msanders/snipmate.vim'
-Bundle 'kchmck/vim-coffee-script'
-
-Bundle 'scrooloose/nerdcommenter'
-
-Bundle 'dchelimsky/sweet-rspec-vim'
-
-" non github repos
-Bundle 'git://git.wincent.com/command-t.git'
-
-" on debian/ubuntu sudo ln -s /usr/bin/ack-grep /usr/local/bin/ack
-Bundle "ack.vim"
-Bundle "jQuery"
-Bundle "bufkill.vim"
-
-Bundle "ervandew/supertab"
-
-" php
-Bundle "shawncplus/phpcomplete.vim"
-
-" Colour schemes
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'peaksea'
-"get_repo "guns" "xoria256.vim"
-"get_repo "wgibbs" "vim-irblack"
-"get_repo "andyferra" "molokai"
-
-" possible future bundles
-"scrooloose" "nerdtree"
-"scrooloose" "syntastic"
-"vim-ruby" "vim-ruby"
-"mhz" "vim-matchit"
-"astashov" "vim-ruby-debugger"
-"jc00ke" "mustache.vim"
-"jc00ke" "taglist.vim"
-"tsaleh" "vim-supertab"
-"chrismetcalf" "vim-yankring"
-"chrismetcalf" "vim-rainbow"
-"michaeljsmith" "vim-indent-object"
-"chrisbra" "csv.vim"
-"cakebaker" "scss-syntax.vim"
-"pangloss" "vim-javascript"
-"ZeusTheTrueGod" "vim-format-js"
-"kana" "vim-textobj-user"
-"nelstrom" "vim-textobj-rubyblock"
-"sjbach" "lusty"
-"ecomba" "vim-ruby-refactoring"
-"vim-scripts" "bufkill.vim"
-"cschlueter" "vim-mustang"
-"vim-scripts" "L9"
-"vim-scripts" "FuzzyFinder"
-"int3" "vim-extradite"
-"sjl" "gundo.vim"
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Bundles config
