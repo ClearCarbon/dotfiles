@@ -24,7 +24,7 @@ bundle 'surround', :git => 'git://github.com/tpope/vim-surround.git'
 bundle 'supertab', :git => 'git://github.com/tsaleh/vim-supertab.git'
 #bundle 'tcomment', :git => 'git://github.com/tsaleh/vim-tcomment.git'
 bundle 'ruby', :git => 'git://github.com/vim-ruby/vim-ruby.git'
-#bundle 'inkpot', :git => 'git://github.com/ciaranm/inkpot'
+bundle 'inkpot', :git => 'git://github.com/ciaranm/inkpot'
 bundle 'endwise', :git => 'git://github.com/tpope/vim-endwise'
 bundle 'jquery', :git => 'git://github.com/vim-scripts/jQuery'
 bundle 'ragtag', :git => 'git://github.com/tpope/vim-ragtag'
@@ -35,12 +35,11 @@ bundle 'ragtag', :git => 'git://github.com/tpope/vim-ragtag'
 bundle 'javascript', :git => 'git://github.com/pangloss/vim-javascript'
 bundle 'syntastic', :git => 'git://github.com/scrooloose/syntastic'
 bundle 'rdoc', :git => 'git://github.com/depuracao/vim-rdoc'
-bundle 'peaksea', :vim_script_id => 760
-
+bundle 'peaksea', :git => 'git://github.com/vim-scripts/peaksea.git'
 # on debian/ubuntu sudo ln -s /usr/bin/ack-grep /usr/local/bin/ack
 bundle 'ack', :git => 'git://github.com/mileszs/ack.vim'
-
 bundle 'phpcomplete', :git => 'git://github.com/shawncplus/phpcomplete.vim'
+bundle 'bufkill', :git => 'git://github.com/hced/bufkill-vim.git'
 
 
 #Bundle 'lokaltog/vim-easymotion'
@@ -49,19 +48,15 @@ bundle 'phpcomplete', :git => 'git://github.com/shawncplus/phpcomplete.vim'
 #Bundle 'kchmck/vim-coffee-script'
 #Bundle 'dchelimsky/sweet-rspec-vim'
 
-#Bundle "bufkill.vim"
 
 #" Colour schemes
 #Bundle 'altercation/vim-colors-solarized'
-#Bundle 'peaksea'
 #"get_repo "guns" "xoria256.vim"
 #"get_repo "wgibbs" "vim-irblack"
 #"get_repo "andyferra" "molokai"
 
 #" possible future bundles
-#"scrooloose" "nerdtree"
 #"scrooloose" "syntastic"
-#"vim-ruby" "vim-ruby"
 #"mhz" "vim-matchit"
 #"astashov" "vim-ruby-debugger"
 #"jc00ke" "mustache.vim"
