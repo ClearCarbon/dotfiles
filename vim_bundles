@@ -41,6 +41,8 @@ bundle 'ack', :git => 'git://github.com/mileszs/ack.vim'
 bundle 'phpcomplete', :git => 'git://github.com/shawncplus/phpcomplete.vim'
 bundle 'bufkill', :git => 'git://github.com/hced/bufkill-vim.git'
 
+bundle 'gnupg', :git => 'git://github.com/vim-scripts/gnupg.vim.git'
+
 
 #Bundle 'lokaltog/vim-easymotion'
 #Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
