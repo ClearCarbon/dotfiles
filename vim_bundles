@@ -40,7 +40,7 @@ bundle 'peaksea', :git => 'git://github.com/vim-scripts/peaksea.git'
 bundle 'ack', :git => 'git://github.com/mileszs/ack.vim'
 bundle 'phpcomplete', :git => 'git://github.com/shawncplus/phpcomplete.vim'
 bundle 'bufkill', :git => 'git://github.com/hced/bufkill-vim.git'
-bundle 'delimitmate', ;git=>'git://github.com/Raimondi/delimitMate.git'
+bundle 'delimitmate', :git=>'git://github.com/Raimondi/delimitMate.git'
 
 #git://github.com/majutsushi/tagbar.git
 
