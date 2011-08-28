@@ -348,12 +348,12 @@ nnoremap <leader>a :Ack
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Display after bundles
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:solarized_termtrans=1
-let g:solarized_termcolors=256
-let g:solarized_contrast="high"
-let g:solarized_visibility="high"
-colorscheme solarized
-"colorscheme peaksea
+"let g:solarized_termtrans=1
+"let g:solarized_termcolors=256
+"let g:solarized_contrast="high"
+"let g:solarized_visibility="high"
+"colorscheme solarized
+colorscheme peaksea
 " If need be use this
 if has('gui_running')
 else
