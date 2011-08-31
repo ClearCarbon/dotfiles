@@ -43,7 +43,8 @@ bundle 'peaksea', :git => 'git://github.com/vim-scripts/peaksea.git'
 bundle 'ack', :git => 'git://github.com/mileszs/ack.vim'
 bundle 'phpcomplete', :git => 'git://github.com/shawncplus/phpcomplete.vim'
 bundle 'bufkill', :git => 'git://github.com/hced/bufkill-vim.git'
-bundle 'delimitmate', :git =>'git://github.com/Raimondi/delimitMate.git'
+
+#bundle 'delimitmate', :git =>'git://github.com/Raimondi/delimitMate.git'
 #bundle 'solarized', :git => 'git://github.com/altercation/vim-colors-solarized'
 #bundle 'csscolor', :git => 'git://github.com/vim-scripts/css_color.vim.git'
 

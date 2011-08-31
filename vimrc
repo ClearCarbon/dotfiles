@@ -54,6 +54,8 @@ set undolevels=1000
 " show the $ at the end of word changes etc
 set cpoptions+=$
 
+set number
+
 " search highlights on, and dynamic searching
 set hlsearch
 set incsearch
@@ -94,9 +96,6 @@ set title
 set scrolloff=3
 
 set ruler
-
-" line numbers are relative to the current line (instead of set nu)
-set relativenumber
 
 " allow hiding buffers with pending changes
 set hidden
@@ -249,7 +248,7 @@ imap <C-v> <ESC>"+pa
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 if has("autocmd")
-  "autocmd BufRead *.phtml set filetype=xml
+  autocmd BufNewFile,BufRead Rakefile,Capfile,Gemfile,config.ru,Guardfile setfiletype ruby
   autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 endif
 
@@ -306,6 +305,7 @@ set makeprg=php\ -l\ %
 if has("autocmd")
   autocmd BufNewFile,BufRead *.mustache set syntax=mustache
   autocmd BufNewFile,BufRead *.jst set syntax=eruby
+  autocmd BufReadPost fugitive://* set bufhidden=delete
 endif
 
 
