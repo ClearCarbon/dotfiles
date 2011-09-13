@@ -43,6 +43,7 @@ bundle 'peaksea', :git => 'git://github.com/vim-scripts/peaksea.git'
 bundle 'ack', :git => 'git://github.com/mileszs/ack.vim'
 bundle 'phpcomplete', :git => 'git://github.com/shawncplus/phpcomplete.vim'
 bundle 'bufkill', :git => 'git://github.com/hced/bufkill-vim.git'
+bundle 'vim-coffee-script', :git => 'git://github.com/kchmck/vim-coffee-script'
 
 #bundle 'delimitmate', :git =>'git://github.com/Raimondi/delimitMate.git'
 #bundle 'solarized', :git => 'git://github.com/altercation/vim-colors-solarized'
@@ -56,7 +57,6 @@ bundle 'gnupg', :git => 'git://github.com/vim-scripts/gnupg.vim.git'
 #Bundle 'lokaltog/vim-easymotion'
 #Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 #Bundle 'csexton/rvm.vim'
-#Bundle 'kchmck/vim-coffee-script'
 #Bundle 'dchelimsky/sweet-rspec-vim'
 
 

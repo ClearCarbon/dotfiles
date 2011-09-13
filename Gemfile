@@ -1,3 +1,4 @@
+source :rubygems
 gem 'vim-bundler'
 gem 'rb-inotify'
 gem 'gem-ctags'

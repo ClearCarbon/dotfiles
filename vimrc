@@ -1,4 +1,5 @@
 call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
 call pathogen#helptags()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -248,7 +249,7 @@ imap <C-v> <ESC>"+pa
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 if has("autocmd")
-  autocmd BufNewFile,BufRead Rakefile,Capfile,Gemfile,config.ru,Guardfile setfiletype ruby
+  autocmd BufNewFile,BufRead Rakefile,*.rake,*.pill,Capfile,Gemfile,config.ru,Guardfile setfiletype ruby
   autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 endif
 
