@@ -10,7 +10,7 @@ alias ack="ack-grep -i -a"
 alias rmatrix='echo -ne "\e[31m" ; while true ; do echo -ne "\e[$(($RANDOM % 2 + 1))m" ; tr -c "[:print:]" " " < /dev/urandom | dd count=1 bs=50 2> /dev/null ; done'
 alias gmatrix='echo -ne "\e[32m" ; while true ; do echo -ne "\e[$(($RANDOM % 2 + 1))m" ; tr -c "[:print:]" " " < /dev/urandom | dd count=1 bs=50 2> /dev/null ; done'
 
-alias v='gvim --remote-silent'
+#alias v='gvim --remote-silent'
 alias g='git'
 alias be='bundle exec'
 
@@ -18,7 +18,7 @@ alias be='bundle exec'
 complete -o default -o nospace -F _git g
 
 export TERM=xterm-256color
-export EDITOR='gvim --remote-silent'
+#export EDITOR='gvim --remote-silent'
 
 export GPGKEY=F6D1428E
 
