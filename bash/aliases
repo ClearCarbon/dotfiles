@@ -1,0 +1,47 @@
+
+# changing directory to code project
+#function c { cd ~/projects/$1; }
+
+# alternative to "rails" command to use templates
+function railsapp {
+  template=$1
+  appname=$2
+  shift 2
+  rails $appname -m http://github.com/ryanb/rails-templates/raw/master/$template.rb $@
+}
+
+# misc
+alias reload='. ~/.bash_profile'
+
+# cd
+alias ..='cd ..'
+
+# ls
+alias ls="ls -F"
+alias l="ls -lAh"
+alias ll="ls -l"
+alias la='ls -A'
+
+alias ack="ack-grep"
+
+# some sillyness from the interweb
+alias rmatrix='echo -ne "\e[31m" ; while true ; do echo -ne "\e[$(($RANDOM % 2 + 1))m" ; tr -c "[:print:]" " " < /dev/urandom | dd count=1 bs=50 2> /dev/null ; done'
+alias gmatrix='echo -ne "\e[32m" ; while true ; do echo -ne "\e[$(($RANDOM % 2 + 1))m" ; tr -c "[:print:]" " " < /dev/urandom | dd count=1 bs=50 2> /dev/null ; done'
+
+# git
+alias g='git'
+# Autocomplete for 'g' as well
+complete -o default -o nospace -F _git g
+#alias gl='git pull'
+#alias gp='git push'
+#alias gd='git diff'
+#alias gc='git commit'
+#alias gca='git commit -a'
+#alias gco='git checkout'
+alias gb='git branch -a'
+alias gs='git status'
+#alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
+#alias changelog='git log `git log -1 --format=%H -- CHANGELOG*`..; cat CHANGELOG*'
+
+alias be='bundle exec'
+
