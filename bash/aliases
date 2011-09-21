@@ -10,6 +10,9 @@ function railsapp {
   rails $appname -m http://github.com/ryanb/rails-templates/raw/master/$template.rb $@
 }
 
+# changing directory to code project
+function p { cd $1; }
+
 # misc
 alias reload='. ~/.bash_profile'
 

@@ -202,10 +202,10 @@ set nowrap
 "set colorcolumn=85
 
 " cut/copy/paste
-vmap <C-x> "+c
-vmap <C-c> "+yi
-vmap <C-v> c<ESC>"+p
-imap <C-v> <ESC>"+pa
+" vmap <C-x> "+c
+" vmap <C-c> "+yi
+" vmap <C-v> c<ESC>"+p
+" imap <C-v> <ESC>"+pa
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
