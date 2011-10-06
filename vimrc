@@ -182,19 +182,10 @@ map <leader>ba :1,300 bd!<cr>
 " Use the arrows to something usefull
 nnoremap <right> :bn<cr>
 nnoremap <left> :bp<cr>
-nnoremap <C-down> <C-W>j
-nnoremap <C-up> <C-W>k
-nnoremap <C-left> <C-W>h
-nnoremap <C-right> <C-W>l
-
-" map <ESC>[5A <C-Up>
-" map! <ESC>[5A <C-Up>
-" map <ESC>[5B <C-Down>
-" map! <ESC>[5B <C-Down>
-" map <ESC>[5D <C-Left>
-" map! <ESC>[5D <C-Left>
-" map <ESC>[5C <C-Right>
-" map! <ESC>[5C <C-Right>
+nnoremap <C-j> <C-W>j
+nnoremap <C-k> <C-W>k
+nnoremap <C-h> <C-W>h
+nnoremap <C-l> <C-W>l
 
 " makes j and k work the way you expect
 nnoremap j gj
@@ -206,9 +197,13 @@ nnoremap ; :
 " handle long lines
 set nowrap
 "set wrap
-"set textwidth=79
+set textwidth=80
 "set formatoptions=qrn1
-"set colorcolumn=85
+" set colorcolumn=80
+augroup vimrc_autocmds
+  autocmd BufEnter * highlight OverLength ctermbg=darkgrey guibg=#592929
+  autocmd BufEnter * match OverLength /\%80v.*/
+augroup END
 
 " cut/copy/paste
 " vmap <C-x> "+c
