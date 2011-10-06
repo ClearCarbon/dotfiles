@@ -187,6 +187,15 @@ nnoremap <C-up> <C-W>k
 nnoremap <C-left> <C-W>h
 nnoremap <C-right> <C-W>l
 
+" map <ESC>[5A <C-Up>
+" map! <ESC>[5A <C-Up>
+" map <ESC>[5B <C-Down>
+" map! <ESC>[5B <C-Down>
+" map <ESC>[5D <C-Left>
+" map! <ESC>[5D <C-Left>
+" map <ESC>[5C <C-Right>
+" map! <ESC>[5C <C-Right>
+
 " makes j and k work the way you expect
 nnoremap j gj
 nnoremap k gk
