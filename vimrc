@@ -200,16 +200,16 @@ set nowrap
 set textwidth=80
 "set formatoptions=qrn1
 " set colorcolumn=80
-augroup vimrc_autocmds
-  autocmd BufEnter * highlight OverLength ctermbg=darkgrey guibg=#592929
-  autocmd BufEnter * match OverLength /\%80v.*/
-augroup END
+" augroup vimrc_autocmds
+"   autocmd BufEnter * highlight OverLength ctermbg=darkgrey guibg=#592929
+"   autocmd BufEnter * match OverLength /\%80v.*/
+" augroup END
 
 " cut/copy/paste
-" vmap <C-x> "+c
-" vmap <C-c> "+yi
-" vmap <C-v> c<ESC>"+p
-" imap <C-v> <ESC>"+pa
+vmap <C-c> "+c
+vmap <C-y> "+yi
+vmap <C-p> c<ESC>"+p
+imap <C-p> <ESC>"+pa
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
