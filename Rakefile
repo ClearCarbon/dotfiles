@@ -2,8 +2,11 @@ require 'rake'
 require 'erb'
 
 desc "install the dot files into user's home directory"
-task :install do
-  replace_all = false
+task :install, :mode do |task, args|
+  args.with_defaults(:mode => 'normal')
+  mode = args[:mode]
+  replace_all = mode=='quiet'
+
   Dir['*'].each do |file|
     next if %w[Rakefile README.markdown LICENSE Gemfile Gemfile.lock temp tmx].include? file
     
