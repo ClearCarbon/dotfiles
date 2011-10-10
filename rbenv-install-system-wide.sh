@@ -31,7 +31,7 @@ popd
 
 # Install Ruby 1.9.2-p290:
 rbenv install 1.9.3-rc1
-rbenv global 1.9.2-rc1
+rbenv global 1.9.3-rc1
 
 # Rehash:
 rbenv rehash
