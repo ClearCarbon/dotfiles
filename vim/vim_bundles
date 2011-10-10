@@ -1,6 +1,6 @@
 
 bundle 'command-t', :git => 'git://github.com/vintikzzz/Command-T.git' do
-  `cd ruby/command-t && /usr/bin/ruby1.8 extconf.rb && make && cd ../rb-fsevent/ext && /usr/bin/ruby1.8 extconf.rb`
+  `cd ruby/command-t && /usr/bin/ruby1.8 extconf.rb && make clean && make`
 end
 
 bundle 'snipmate', :git => 'git://github.com/msanders/snipmate.vim.git'
