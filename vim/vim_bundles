@@ -1,5 +1,5 @@
 
-bundle 'command-t', :git => 'git://github.com/vintikzzz/Command-T.git' do
+bundle 'command-t', :git => 'git://github.com/wincent/Command-T.git' do
   `cd ruby/command-t && /usr/bin/ruby1.8 extconf.rb && make clean && make`
 end
 
