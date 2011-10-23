@@ -41,10 +41,10 @@ def replace_file(file,quiet)
 end
 
 def link_file(file,quiet)
-  if file =~ /.erb$/ && !quiet
+  if file =~ /.erb$/
     puts "generating ~/.#{file.sub('.erb', '')}"
     File.open(File.join(ENV['HOME'], ".#{file.sub('.erb', '')}"), 'w') do |new_file|
-      new_file.write ERB.new(File.read(file)).result(binding)
+      new_file.write (quiet ? File.read(file) : ERB.new(File.read(file)).result(binding))
     end
   else
     puts "linking ~/.#{file}"
