@@ -8,7 +8,7 @@ task :install, :mode do |task, args|
   replace_all = mode=='quiet'
 
   Dir['*'].each do |file|
-    next if %w[Rakefile README.markdown LICENSE Gemfile Gemfile.lock temp tmx].include? file
+    next if %w[Rakefile README.markdown LICENSE Gemfile Gemfile.lock temp].include? file
     
     if File.exist?(File.join(ENV['HOME'], ".#{file.sub('.erb', '')}"))
       if File.identical? file, File.join(ENV['HOME'], ".#{file.sub('.erb', '')}")
