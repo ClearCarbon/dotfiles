@@ -49,7 +49,11 @@ bundle 'bufkill', :git => 'git://github.com/hced/bufkill-vim.git'
 #bundle 'vim-coffee-script', :git => 'git://github.com/kchmck/vim-coffee-script'
 bundle 'vim-handlebars', :git => 'git://github.com/nono/vim-handlebars.git'
 
-bundle 'ruby-refactoring', :git => 'git://github.com/ecomba/vim-ruby-refactoring.git'
+bundle 'ruby-refactoring', :git => 'git://github.com/ecomba/vim-ruby-refactoring.git' do
+  # this plugin is not pathogen compatible
+  `cp -R plugin/refactorings ../../plugin/`
+end
+
 bundle 'matchit', :git => 'git://github.com/mhz/vim-matchit.git'
 
 #bundle 'tslime', :git => 'git://github.com/xaviershay/tslime.vim.git'
