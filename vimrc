@@ -212,6 +212,9 @@ vmap <C-y> "+yi
 vmap <C-p> c<ESC>"+p
 imap <C-p> <ESC>"+pa
 
+"map leader-W to strip white space
+nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mappings
 " https://destroyallsoftware.com/file-navigation-in-vim.html
@@ -300,9 +303,16 @@ endfunction
 " Run this file
 map <leader>t :call RunTestFile()<cr>
 " Run only the example under the cursor
-map <leader>T :call RunNearestTest()<cr>
+" map <leader>T :call RunNearestTest()<cr>
 " Run all test files
-map <leader>a :call RunTests('spec')<cr>
+map <leader>T :call RunTests('spec')<cr>
+
+set winwidth=100
+" We have to have a winheight bigger than we want to set winminheight. But if
+" we set winheight to be huge before winminheight, the winminheight set will fail.
+set winheight=5
+set winminheight=5
+set winheight=999
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Unused mappings ATM
@@ -312,9 +322,6 @@ map <leader>a :call RunTests('spec')<cr>
 " spaces visible when requested
 "set listchars=tab:>-,trail:·,eol:$
 "nmap <silent> <leader>s :set nolist!<cr>
-
-"map leader-W to strip white space
-"nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
 " fold html tag
 "nnoremap <leader>ft Vatzf
@@ -403,6 +410,7 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.mustache set syntax=mustache
   autocmd BufNewFile,BufRead *.jst set syntax=eruby
   autocmd BufReadPost fugitive://* set bufhidden=delete
+  autocmd BufNewFile,BufRead *.md,*.markdown,README,*.txt set spell
 endif
 
 

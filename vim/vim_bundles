@@ -3,7 +3,10 @@ bundle 'command-t', :git => 'git://github.com/wincent/Command-T.git' do
   `cd ruby/command-t && /usr/bin/ruby1.8 extconf.rb && make clean && make`
 end
 
-bundle 'snipmate', :git => 'git://github.com/msanders/snipmate.vim.git'
+bundle 'snipmate', :git => 'git://github.com/msanders/snipmate.vim.git' do
+  `cp -n ../../snippets/*.snippets snippets/`
+end
+
 #bundle 'nerdtree', :git => 'git://github.com/scrooloose/nerdtree.git'
 #bundle 'nerdcommenter', :git => 'git://github.com/scrooloose/nerdcommenter'
 #bundle 'textile', :git => 'git://github.com/timcharper/textile.vim.git'
@@ -44,6 +47,10 @@ bundle 'ack', :git => 'git://github.com/mileszs/ack.vim'
 bundle 'phpcomplete', :git => 'git://github.com/shawncplus/phpcomplete.vim'
 bundle 'bufkill', :git => 'git://github.com/hced/bufkill-vim.git'
 #bundle 'vim-coffee-script', :git => 'git://github.com/kchmck/vim-coffee-script'
+bundle 'vim-handlebars', :git => 'git://github.com/nono/vim-handlebars.git'
+
+bundle 'ruby-refactoring', :git => 'git://github.com/ecomba/vim-ruby-refactoring.git'
+bundle 'matchit', :git => 'git://github.com/mhz/vim-matchit.git'
 
 #bundle 'tslime', :git => 'git://github.com/xaviershay/tslime.vim.git'
 
@@ -71,7 +78,6 @@ bundle 'gnupg', :git => 'git://github.com/vim-scripts/gnupg.vim.git'
 #"scrooloose" "syntastic"
 #"mhz" "vim-matchit"
 #"astashov" "vim-ruby-debugger"
-#"jc00ke" "mustache.vim"
 #"jc00ke" "taglist.vim"
 #"chrismetcalf" "vim-yankring"
 #"#chrismetcalf" "vim-rainbow"
