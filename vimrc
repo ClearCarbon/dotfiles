@@ -129,7 +129,7 @@ set undodir=~/.vim/undo
 " because vim-rails didnt like it
 "set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{fugitive#statusline()}
 "set statusline=[%n]\ %<%.99f\ %h%w%m%r%y%{exists('g:loaded_rvm')?rvm#statusline():''}%=%-16(\ %l,%c-%v\ %)%P
-set statusline=[%n]\ %<%.99f\ %h%w%m%r%y%{exists('g:loaded_fugitive')?fugitive#statusline():''}%{exists('g:loaded_rvm')?rvm#statusline():''}%=%-16(\ %l,%c-%v\ %)%P
+set statusline=[%n]\ %<%.99f\ %h%w%m%r%y%{exists('g:loaded_fugitive')?fugitive#statusline():''}%{exists('g:loaded_rvm')?rvm#statusline():''}%{SyntasticStatuslineFlag()}%=%-16(\ %l,%c-%v\ %)%P
 
 " Look for the file in the current directory,
 " then south until you reach home.
@@ -187,6 +187,11 @@ nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
 nnoremap <C-h> <C-W>h
 nnoremap <C-l> <C-W>l
+
+" nnoremap <C-J> <C-W>J
+" nnoremap <C-K> <C-W>K
+" nnoremap <C-H> <C-W>H
+" nnoremap <C-L> <C-W>L
 
 " makes j and k work the way you expect
 nnoremap j gj
@@ -408,9 +413,10 @@ set makeprg=php\ -l\ %
 
 if has("autocmd")
   autocmd BufNewFile,BufRead *.mustache set syntax=mustache
-  autocmd BufNewFile,BufRead *.jst set syntax=eruby
   autocmd BufReadPost fugitive://* set bufhidden=delete
   autocmd BufNewFile,BufRead *.md,*.markdown,README,*.txt set spell
+  autocmd BufNewFile,BufRead *.jst set syntax=eruby
+  autocmd BufNewFile,BufRead *.jst.tpl set syntax=jst
 endif
 
 
@@ -438,11 +444,13 @@ end
 " map for ack
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 nnoremap <leader>a :Ack
+let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
+nnoremap <leader>b :BufExplorer<cr>
+let g:bufExplorerShowRelativePath=1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Unused atm
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"nnoremap <leader>b :LustyJuggler<CR>
 " map F2 to toggle nerd tree
 "map <F2> :NERDTreeToggle<cr>
 "map <F3> :TlistToggle<cr>
@@ -458,7 +466,8 @@ nnoremap <leader>a :Ack
 "let g:solarized_contrast="high"
 "let g:solarized_visibility="high"
 "colorscheme solarized
-colorscheme peaksea
+"colorscheme peaksea
+colorscheme vividchalk
 " If need be use this
 if has('gui_running')
 else

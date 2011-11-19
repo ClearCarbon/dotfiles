@@ -4,7 +4,6 @@ parse_git_branch() {
 
 export EDITOR="vim"
 export TERM=screen-256color
-export EDITOR='vim'
 export GPGKEY=F6D1428E
 set -o vi
 
