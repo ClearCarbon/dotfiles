@@ -11,6 +11,8 @@ call pathogen#helptags()
 set nocompatible
 " set term=ansi
 
+runtime macros/matchit.vim
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
