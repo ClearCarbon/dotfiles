@@ -445,7 +445,7 @@ end
 
 " map for ack
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
-nnoremap <leader>a :Ack
+nnoremap <leader>a :Ack 
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 nnoremap <leader>b :BufExplorer<cr>
 let g:bufExplorerShowRelativePath=1
