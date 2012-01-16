@@ -46,6 +46,8 @@ bundle 'vim-coffee-script', :git => 'git://github.com/kchmck/vim-coffee-script'
 bundle 'vim-handlebars', :git => 'git://github.com/nono/vim-handlebars.git'
 
 bundle 'gnupg', :git => 'git://github.com/vim-scripts/gnupg.vim.git'
+bundle 'tslime', :git => 'git://github.com/jgdavey/tslime.vim.git'
+bundle 'vim-turbux', :git => 'git://github.com/jgdavey/vim-turbux.git'
 
 
 #bundle 'nerdtree', :git => 'git://github.com/scrooloose/nerdtree.git'
@@ -62,7 +64,6 @@ bundle 'gnupg', :git => 'git://github.com/vim-scripts/gnupg.vim.git'
 #bundle 'json', :vim_script_id => 10853
 #bundle 'lusty-juggler', :git => 'git://github.com/sjbach/lusty'
 
-#bundle 'tslime', :git => 'git://github.com/xaviershay/tslime.vim.git'
 #bundle 'delimitmate', :git =>'git://github.com/Raimondi/delimitMate.git'
 #bundle 'solarized', :git => 'git://github.com/altercation/vim-colors-solarized'
 #bundle 'csscolor', :git => 'git://github.com/vim-scripts/css_color.vim.git'
