@@ -45,10 +45,11 @@ bundle 'bufkill', :git => 'git://github.com/hced/bufkill-vim.git'
 bundle 'vim-coffee-script', :git => 'git://github.com/kchmck/vim-coffee-script'
 bundle 'vim-handlebars', :git => 'git://github.com/nono/vim-handlebars.git'
 
-bundle 'gnupg', :git => 'git://github.com/vim-scripts/gnupg.vim.git'
-bundle 'tslime', :git => 'git://github.com/jgdavey/tslime.vim.git'
-bundle 'vim-turbux', :git => 'git://github.com/jgdavey/vim-turbux.git'
+#bundle 'gnupg', :git => 'git://github.com/vim-scripts/gnupg.vim.git'
+#bundle 'tslime', :git => 'git://github.com/jgdavey/tslime.vim.git'
+#bundle 'vim-turbux', :git => 'git://github.com/jgdavey/vim-turbux.git'
 
+bundle 'slimv', :git => 'git://github.com/vim-scripts/slimv.vim.git'
 
 #bundle 'nerdtree', :git => 'git://github.com/scrooloose/nerdtree.git'
 #bundle 'nerdcommenter', :git => 'git://github.com/scrooloose/nerdcommenter'
