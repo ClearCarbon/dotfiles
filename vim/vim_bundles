@@ -11,7 +11,7 @@ end
 bundle 'snipmate', :git => 'git://github.com/msanders/snipmate.vim.git'
 
 bundle 'bufexplorer', :git => 'git://github.com/slack/vim-bufexplorer.git'
-bundle 'vim-eunush', :git => 'git://github.com/tpope/vim-eunuch.git'
+bundle 'vim-eunuch', :git => 'git://github.com/tpope/vim-eunuch.git'
 bundle 'fugitive', :git => 'git://github.com/tpope/vim-fugitive.git'
 bundle 'unimpaired', :git => 'git://github.com/tpope/vim-unimpaired.git'
 bundle 'afterimage', :git => 'git://github.com/tpope/vim-afterimage.git'

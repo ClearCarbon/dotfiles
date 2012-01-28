@@ -131,7 +131,7 @@ set undodir=~/.vim/undo
 " because vim-rails didnt like it
 "set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{fugitive#statusline()}
 "set statusline=[%n]\ %<%.99f\ %h%w%m%r%y%{exists('g:loaded_rvm')?rvm#statusline():''}%=%-16(\ %l,%c-%v\ %)%P
-set statusline=[%n]\ %<%.99f\ %h%w%m%r%y%{exists('g:loaded_fugitive')?fugitive#statusline():''}%{exists('g:loaded_rvm')?rvm#statusline():''}%{SyntasticStatuslineFlag()}%=%-16(\ %l,%c-%v\ %)%P
+set statusline=[%n]\ %<%.99f\ %h%w%m%r%y%{exists('g:loaded_fugitive')?fugitive#statusline():''}%{SyntasticStatuslineFlag()}%=%-16(\ %l,%c-%v\ %)%P
 
 " Look for the file in the current directory,
 " then south until you reach home.
@@ -314,12 +314,12 @@ map <leader>t :call RunTestFile()<cr>
 " Run all test files
 map <leader>T :call RunTests('spec')<cr>
 
-set winwidth=100
-" We have to have a winheight bigger than we want to set winminheight. But if
-" we set winheight to be huge before winminheight, the winminheight set will fail.
-set winheight=5
-set winminheight=5
-set winheight=999
+" set winwidth=100
+" " We have to have a winheight bigger than we want to set winminheight. But if
+" " we set winheight to be huge before winminheight, the winminheight set will fail.
+" set winheight=5
+" set winminheight=5
+" set winheight=999
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Unused mappings ATM
