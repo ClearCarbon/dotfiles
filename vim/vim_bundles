@@ -1,9 +1,6 @@
-
 bundle 'ruby-refactoring', :git => 'git://github.com/ecomba/vim-ruby-refactoring.git'
-
 bundle 'ctrlp', :git => 'git://github.com/kien/ctrlp.vim.git'
 bundle 'snipmate', :git => 'git://github.com/msanders/snipmate.vim.git'
-
 bundle 'vim-eunuch', :git => 'git://github.com/tpope/vim-eunuch.git'
 bundle 'fugitive', :git => 'git://github.com/tpope/vim-fugitive.git'
 bundle 'unimpaired', :git => 'git://github.com/tpope/vim-unimpaired.git'
@@ -28,9 +25,9 @@ bundle 'syntastic', :git => 'git://github.com/scrooloose/syntastic'
 bundle 'rdoc', :git => 'git://github.com/depuracao/vim-rdoc'
 bundle 'peaksea', :git => 'git://github.com/vim-scripts/peaksea.git'
 bundle 'scss-syntax', :git => 'git://github.com/cakebaker/scss-syntax.vim.git'
-
 bundle 'vim-textobj-user', :git => 'git://github.com/kana/vim-textobj-user.git'
 bundle 'vim-textobj-rubyblock', :git => 'git://github.com/nelstrom/vim-textobj-rubyblock'
+bundle 'delimitmate', :git =>'git://github.com/Raimondi/delimitMate.git'
 
 # on debian/ubuntu sudo ln -s /usr/bin/ack-grep /usr/local/bin/ack
 bundle 'ack', :git => 'git://github.com/mileszs/ack.vim'
@@ -42,8 +39,7 @@ bundle 'vim-handlebars', :git => 'git://github.com/nono/vim-handlebars.git'
 #bundle 'gnupg', :git => 'git://github.com/vim-scripts/gnupg.vim.git'
 #bundle 'tslime', :git => 'git://github.com/jgdavey/tslime.vim.git'
 #bundle 'vim-turbux', :git => 'git://github.com/jgdavey/vim-turbux.git'
-
-bundle 'slimv', :git => 'git://github.com/vim-scripts/slimv.vim.git'
+#bundle 'slimv', :git => 'git://github.com/vim-scripts/slimv.vim.git'
 
 #bundle 'nerdtree', :git => 'git://github.com/scrooloose/nerdtree.git'
 #bundle 'nerdcommenter', :git => 'git://github.com/scrooloose/nerdcommenter'
@@ -58,38 +54,29 @@ bundle 'slimv', :git => 'git://github.com/vim-scripts/slimv.vim.git'
 #bundle 'indexed-search', :vim_script_id => 7062
 #bundle 'json', :vim_script_id => 10853
 #bundle 'lusty-juggler', :git => 'git://github.com/sjbach/lusty'
-
-#bundle 'delimitmate', :git =>'git://github.com/Raimondi/delimitMate.git'
 #bundle 'solarized', :git => 'git://github.com/altercation/vim-colors-solarized'
 #bundle 'csscolor', :git => 'git://github.com/vim-scripts/css_color.vim.git'
 
-#git://github.com/majutsushi/tagbar.git
 
+#git://github.com/majutsushi/tagbar.git
 #Bundle 'lokaltog/vim-easymotion'
 #Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 #Bundle 'csexton/rvm.vim'
 #Bundle 'dchelimsky/sweet-rspec-vim'
-
 #" Colour schemes
 #"get_repo "guns" "xoria256.vim"
 #"get_repo "wgibbs" "vim-irblack"
 #"get_repo "andyferra" "molokai"
-
 #" possible future bundles
-#"scrooloose" "syntastic"
 #"mhz" "vim-matchit"
 #"astashov" "vim-ruby-debugger"
 #"jc00ke" "taglist.vim"
 #"chrismetcalf" "vim-yankring"
-#"#chrismetcalf" "vim-rainbow"
+#"chrismetcalf" "vim-rainbow"
 #"michaeljsmith" "vim-indent-object"
 #"chrisbra" "csv.vim"
 #"pangloss" "vim-javascript"
 #"ZeusTheTrueGod" "vim-format-js"
-#"kana" "vim-textobj-user"
-#"sjbach" "lusty"
-#"ecomba" "vim-ruby-refactoring"
-#"vim-scripts" "bufkill.vim"
 #"cschlueter" "vim-mustang"
 #"vim-scripts" "L9"
 #"vim-scripts" "FuzzyFinder"
