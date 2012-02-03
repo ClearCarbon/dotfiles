@@ -228,20 +228,20 @@ nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Open files with <leader>f
-map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
+map <leader>f :ClearCtrlPCache<cr>\|:CtrlP<cr>
 " Open files, limited to the directory of the current file, with <leader>gf
 " This requires the %% mapping found below.
-map <leader>gf :CommandTFlush<cr>\|:CommandT %%<cr>
+map <leader>gf :ClearCtrlPCache<cr>\|:CtrlP %%<cr>
 
 " Rails specific
-map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
-map <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
-map <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
-map <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
-map <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
-map <leader>gp :CommandTFlush<cr>\|:CommandT public<cr>
-map <leader>gs :CommandTFlush<cr>\|:CommandT app/assets/stylesheets<cr>
-map <leader>gj :CommandTFlush<cr>\|:CommandT app/assets/javascripts<cr>
+map <leader>gv :ClearCtrlPCache<cr>\|:CtrlP app/views<cr>
+map <leader>gc :ClearCtrlPCache<cr>\|:CtrlP app/controllers<cr>
+map <leader>gm :ClearCtrlPCache<cr>\|:CtrlP app/models<cr>
+map <leader>gh :ClearCtrlPCache<cr>\|:CtrlP app/helpers<cr>
+map <leader>gl :ClearCtrlPCache<cr>\|:CtrlP lib<cr>
+map <leader>gp :ClearCtrlPCache<cr>\|:CtrlP public<cr>
+map <leader>gs :ClearCtrlPCache<cr>\|:CtrlP app/assets/stylesheets<cr>
+map <leader>gj :ClearCtrlPCache<cr>\|:CtrlP app/assets/javascripts<cr>
 map <leader>gr :topleft :split config/routes.rb<cr>
 map <leader>gg :topleft 100 :split Gemfile<cr>
 
