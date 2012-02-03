@@ -1,13 +1,14 @@
 
-bundle 'command-t', :git => 'git://github.com/wincent/Command-T.git' do
-  `cd ruby/command-t && /usr/bin/ruby1.8 extconf.rb && make clean && make`
-end
+#bundle 'command-t', :git => 'git://github.com/wincent/Command-T.git' do
+#  `cd ruby/command-t && /usr/bin/ruby1.8 extconf.rb && make clean && make`
+#end
 
 bundle 'ruby-refactoring', :git => 'git://github.com/ecomba/vim-ruby-refactoring.git' do
   # this plugin is not pathogen compatible
   #`cp -R plugin/refactorings ../../plugin/`
 end
 
+bundle 'ctrlp', :git => 'git://github.com/kien/ctrlp.vim.git'
 bundle 'snipmate', :git => 'git://github.com/msanders/snipmate.vim.git'
 
 bundle 'bufexplorer', :git => 'git://github.com/slack/vim-bufexplorer.git'
