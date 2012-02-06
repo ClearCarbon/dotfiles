@@ -213,12 +213,6 @@ set textwidth=80
 "   autocmd BufEnter * match OverLength /\%80v.*/
 " augroup END
 
-" cut/copy/paste
-vmap <C-c> "+c
-vmap <C-y> "+yi
-vmap <C-p> c<ESC>"+p
-imap <C-p> <ESC>"+pa
-
 "map leader-W to strip white space
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
@@ -449,8 +443,6 @@ end
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 nnoremap <leader>a :Ack 
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
-nnoremap <leader>b :BufExplorer<cr>
-let g:bufExplorerShowRelativePath=1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Unused atm
