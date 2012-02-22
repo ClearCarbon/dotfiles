@@ -152,6 +152,7 @@ let g:mapleader = ","
 " When vimrc is edited, reload it
 autocmd! bufwritepost vimrc source $MYVIMRC
 
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mappings
@@ -411,6 +412,7 @@ set makeprg=php\ -l\ %
 
 if has("autocmd")
   autocmd BufNewFile,BufRead *.mustache set syntax=mustache
+  autocmd BufNewFile,BufRead *.ol setfiletype lisp
   autocmd BufReadPost fugitive://* set bufhidden=delete
   autocmd BufNewFile,BufRead *.md,*.markdown,README,*.txt set spell
   autocmd BufNewFile,BufRead *.jst set syntax=eruby
@@ -443,6 +445,11 @@ end
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 nnoremap <leader>a :Ack 
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
+
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|public$',
+  \ 'file': '\.jpg$\|\.png$\|\.gif$',
+  \ }
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Unused atm
