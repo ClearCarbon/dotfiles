@@ -239,7 +239,7 @@ map <leader>gl :ClearCtrlPCache<cr>\|:CtrlP lib<cr>
 map <leader>gp :ClearCtrlPCache<cr>\|:CtrlP public<cr>
 map <leader>gs :ClearCtrlPCache<cr>\|:CtrlP app/assets/stylesheets<cr>
 map <leader>gj :ClearCtrlPCache<cr>\|:CtrlP app/assets/javascripts<cr>
-map <leader>gr :topleft :split config/routes.rb<cr>
+map <leader>gr :topleft 100 :split config/routes.rb<cr>
 map <leader>gg :topleft 100 :split Gemfile<cr>
 
 " Show the current routes in the split
