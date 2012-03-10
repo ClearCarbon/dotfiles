@@ -96,8 +96,8 @@ ${diskiograph_read 20}
 
 ROOT: $alignr ${fs_free /} / ${fs_size /}
 ${fs_bar 3 /}
-STORE1: $alignr ${fs_free /media/store1} / ${fs_size /media/store1}
-${fs_bar 3 /media/store1}
+STORE1: $alignr ${fs_free /mnt/store1} / ${fs_size /mnt/store1}
+${fs_bar 3 /mnt/store1}
 
 $stippled_hr
 Network
