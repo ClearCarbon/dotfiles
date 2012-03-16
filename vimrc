@@ -154,7 +154,8 @@ let g:mapleader = ","
 " When vimrc is edited, reload it
 autocmd! bufwritepost vimrc,.vimrc source $MYVIMRC
 
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
+" this conflicts with fugitive
+" set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mappings
