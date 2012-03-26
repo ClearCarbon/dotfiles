@@ -227,7 +227,8 @@ nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
 " Open files with <leader>f
 map <leader>f :ClearCtrlPCache<cr>\|:CtrlP<cr>
-map <leader>b :CtrlPBuffer<cr>
+" map <leader>b :CtrlPBuffer<cr>
+map <leader>b :BufExplorer<cr>
 map <leader>r :CtrlPMRU<cr>
 " Open files, limited to the directory of the current file, with <leader>gf
 " This requires the %% mapping found below.

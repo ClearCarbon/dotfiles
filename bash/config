@@ -55,6 +55,10 @@ fi
 
 # missing or swapping characters
 shopt -s cdspell
+shopt -s globstar
+shopt -s checkjobs
+shopt -s cmdhist
+shopt -s extglob
 
 # search for dirs in home
 export CDPATH=.:~
