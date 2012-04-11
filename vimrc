@@ -164,11 +164,8 @@ autocmd! bufwritepost vimrc,.vimrc source $MYVIMRC
 " Fast saving
 nmap <leader>w :w!<cr>
 
-" this is a good one to reserve for later
-" nnoremap <leader><space> :noh<cr>
-
 " clear search buffer when hitting return
-:nnoremap <CR> :nohlsearch<cr> 
+nnoremap <leader><space> :nohlsearch<cr>
 
 " Quickly edit/reload the vimrc file
 " open vimrc in vertically split window

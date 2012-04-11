@@ -30,6 +30,7 @@ bundle 'vim-textobj-rubyblock', :git => 'git://github.com/nelstrom/vim-textobj-r
 bundle 'bundler', :git => 'git://github.com/tpope/vim-bundler.git'
 bundle 'bufexplorer', :git => 'git://github.com/slack/vim-bufexplorer.git'
 bundle 'vroom', :git => 'git://github.com/skalnik/vim-vroom.git'
+bundle 'tabular', :git => 'git://github.com/godlygeek/tabular.git'
 
 # on debian/ubuntu sudo ln -s /usr/bin/ack-grep /usr/local/bin/ack
 bundle 'ack', :git => 'git://github.com/mileszs/ack.vim'
