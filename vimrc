@@ -232,7 +232,7 @@ imap <c-l> <space>=><space>
 " Open files with <leader>f
 map <leader>f :ClearCtrlPCache<cr>\|:CtrlP<cr>
 " map <leader>b :CtrlPBuffer<cr>
-map <leader>b :BufExplorer<cr>
+map <leader>b :BuffergatorOpen<cr>
 map <leader>r :CtrlPMRU<cr>
 " Open files, limited to the directory of the current file, with <leader>gf
 " This requires the %% mapping found below.
@@ -410,6 +410,8 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|public$',
   \ 'file': '\.jpg$\|\.png$\|\.gif$',
   \ }
+
+let g:buffergator_suppress_keymaps = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Display after bundles

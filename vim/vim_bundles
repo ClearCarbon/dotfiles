@@ -21,12 +21,12 @@ bundle 'bundler',    :git => 'git://github.com/tpope/vim-bundler.git'
 bundle 'cucumber',   :git => 'git://github.com/tpope/vim-cucumber.git'
 
 bundle 'ctrlp',             :git => 'git://github.com/kien/ctrlp.vim.git'
+bundle 'buffergator',       :git => 'git://github.com/jeetsukumaran/vim-buffergator'
 bundle 'supertab',          :git => 'git://github.com/ervandew/supertab.git'
 bundle 'ruby',              :git => 'git://github.com/vim-ruby/vim-ruby.git'
 bundle 'javascript',        :git => 'git://github.com/pangloss/vim-javascript'
 bundle 'syntastic',         :git => 'git://github.com/scrooloose/syntastic'
 bundle 'rdoc',              :git => 'git://github.com/depuracao/vim-rdoc'
-bundle 'bufexplorer',       :git => 'git://github.com/slack/vim-bufexplorer.git'
 bundle 'vroom',             :git => 'git://github.com/skalnik/vim-vroom.git'
 bundle 'ack',               :git => 'git://github.com/mileszs/ack.vim'
 bundle 'tabular',           :git => 'git://github.com/godlygeek/tabular.git'
@@ -36,7 +36,10 @@ bundle 'textobj-rubyblock', :git => 'git://github.com/nelstrom/vim-textobj-rubyb
 bundle 'scss-syntax',       :git => 'git://github.com/cakebaker/scss-syntax.vim.git'
 
 bundle 'phpcomplete',      :git => 'git://github.com/shawncplus/phpcomplete.vim'
-bundle 'snipmate',         :git => 'git://github.com/msanders/snipmate.vim.git'
+bundle 'snipmate',         :git => 'git://github.com/msanders/snipmate.vim.git' do
+  `sed -i 's/ino <silent> <tab>/ino <silent> <c-s>/g' after/plugin/snipMate.vim`
+  `sed -i 's/snor <silent> <tab>/ino <silent> <c-s>/g' after/plugin/snipMate.vim`
+end
 bundle 'ruby-refactoring', :git => 'git://github.com/ecomba/vim-ruby-refactoring.git'
 bundle 'coffee-script',    :git => 'git://github.com/kchmck/vim-coffee-script'
 bundle 'handlebars',       :git => 'git://github.com/nono/vim-handlebars.git'
@@ -48,6 +51,7 @@ bundle 'peaksea',    :git => 'git://github.com/vim-scripts/peaksea.git'
 bundle 'solarized',  :git => 'git://github.com/altercation/vim-colors-solarized'
 
 # maybe use in the future
+# bundle 'bufexplorer',       :git => 'git://github.com/slack/vim-bufexplorer.git'
 #bundle 'jquery', :git => 'git://github.com/vim-scripts/jQuery'
 #bundle 'gnupg', :git => 'git://github.com/vim-scripts/gnupg.vim.git'
 #bundle 'tslime', :git => 'git://github.com/jgdavey/tslime.vim.git'
