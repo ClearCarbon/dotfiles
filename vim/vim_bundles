@@ -36,10 +36,7 @@ bundle 'textobj-rubyblock', :git => 'git://github.com/nelstrom/vim-textobj-rubyb
 bundle 'scss-syntax',       :git => 'git://github.com/cakebaker/scss-syntax.vim.git'
 
 bundle 'phpcomplete',      :git => 'git://github.com/shawncplus/phpcomplete.vim'
-bundle 'snipmate',         :git => 'git://github.com/msanders/snipmate.vim.git' do
-  `sed -i 's/ino <silent> <tab>/ino <silent> <c-s>/g' after/plugin/snipMate.vim`
-  `sed -i 's/snor <silent> <tab>/ino <silent> <c-s>/g' after/plugin/snipMate.vim`
-end
+bundle 'snipmate',         :git => 'git://github.com/msanders/snipmate.vim.git'
 bundle 'ruby-refactoring', :git => 'git://github.com/ecomba/vim-ruby-refactoring.git'
 bundle 'coffee-script',    :git => 'git://github.com/kchmck/vim-coffee-script'
 bundle 'handlebars',       :git => 'git://github.com/nono/vim-handlebars.git'

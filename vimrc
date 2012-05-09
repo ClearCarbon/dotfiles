@@ -161,6 +161,9 @@ autocmd! bufwritepost vimrc,.vimrc source $MYVIMRC
 " Mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Don't use Ex mode, use Q for formatting
+map Q gq
+
 " Fast saving
 nmap <leader>w :w!<cr>
 
@@ -343,6 +346,15 @@ if has("autocmd")
     autocmd BufNewFile,BufRead Rakefile,*.rake,*.pill,Capfile,Gemfile,config.ru,Guardfile setfiletype ruby
     autocmd BufNewFile,BufRead *.css.scss.erb,*.css.scss setfiletype css
     autocmd BufNewFile,BufRead *.js,*.js.erb setfiletype javascript
+    if has("folding")
+      autocmd FileType ruby set foldenable
+      autocmd FileType ruby set foldmethod=syntax
+      autocmd FileType ruby set foldlevelstart=99
+      " autocmd FileType ruby set nofoldenable
+      " autocmd FileType ruby set foldlevel=1
+      " autocmd FileType ruby set foldnestmax=2
+      " autocmd FileType ruby set foldtext=strpart(getline(v:foldstart),0,50).'\ ...\ '.substitute(getline(v:foldend),'^[\ #]*','','g').'\ '
+    endif
 
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " PHP
@@ -407,9 +419,9 @@ nnoremap <leader>a :Ack
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|public$',
-  \ 'file': '\.jpg$\|\.png$\|\.gif$',
-  \ }
+      \ 'dir':  '\.git$\|public$',
+      \ 'file': '\.jpg$\|\.png$\|\.gif$',
+      \ }
 
 let g:buffergator_suppress_keymaps = 1
 
