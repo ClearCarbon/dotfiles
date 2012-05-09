@@ -38,6 +38,9 @@ set copyindent
 set showcmd
 set showmode
 
+" dont autofold on start or load
+set foldlevelstart=99
+
 " By default, pressing <TAB> in command mode will
 " choose the first possible completion with no
 " indication of how many others there might be.
@@ -349,11 +352,10 @@ if has("autocmd")
     if has("folding")
       autocmd FileType ruby set foldenable
       autocmd FileType ruby set foldmethod=syntax
-      autocmd FileType ruby set foldlevelstart=99
       " autocmd FileType ruby set nofoldenable
       " autocmd FileType ruby set foldlevel=1
       " autocmd FileType ruby set foldnestmax=2
-      " autocmd FileType ruby set foldtext=strpart(getline(v:foldstart),0,50).'\ ...\ '.substitute(getline(v:foldend),'^[\ #]*','','g').'\ '
+      autocmd FileType ruby set foldtext=strpart(getline(v:foldstart),0,50).'\ ...\ '.substitute(getline(v:foldend),'^[\ #]*','','g').'\ '
     endif
 
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
