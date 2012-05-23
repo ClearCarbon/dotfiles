@@ -20,13 +20,13 @@ alias reload='. ~/.bash_profile'
 alias ..='cd ..'
 
 # ls
-alias ls="ls --color=auto -F"
-alias l="ls --color=auto -lAh"
+alias ls="ls -F"
+alias l="ls -lAh"
 
-alias ll="ls --color=auto -l"
-alias la='ls --color=auto -A'
+alias ll="ls -l"
+alias la='ls -A'
 
-alias ack="ack-grep"
+#alias ack="ack-grep"
 
 # some sillyness from the interweb
 alias rmatrix='echo -ne "\e[31m" ; while true ; do echo -ne "\e[$(($RANDOM % 2 + 1))m" ; tr -c "[:print:]" " " < /dev/urandom | dd count=1 bs=50 2> /dev/null ; done'
