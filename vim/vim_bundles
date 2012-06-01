@@ -41,6 +41,7 @@ bundle 'snipmate',         :git => 'git://github.com/msanders/snipmate.vim.git'
 bundle 'ruby-refactoring', :git => 'git://github.com/ecomba/vim-ruby-refactoring.git'
 bundle 'coffee-script',    :git => 'git://github.com/kchmck/vim-coffee-script'
 bundle 'handlebars',       :git => 'git://github.com/nono/vim-handlebars.git'
+bundle 'wiki',             :git => 'git://github.com/vim-scripts/vimwiki.git'
 
 # colours
 bundle 'inkpot',     :git => 'git://github.com/ciaranm/inkpot'

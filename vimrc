@@ -443,3 +443,6 @@ if has('gui_running')
 else
 end
 
+if filereadable(glob("~/.vimrc.local")) 
+  source ~/.vimrc.local
+endif
