@@ -1,0 +1,66 @@
+set mbox_type=maildir
+set mbox="~/mail/inbox/"
+set spoolfile="~/mail/inbox/"
+set folder="~/mail/"
+set record="~/mail/sent/"
+set postponed="~/mail/postponed/"
+
+# Vim like keybinds
+# bind pager j next-line
+# bind pager k previous-line
+
+set signature="~/.mutt/signature"
+
+# Don't wait to enter mailbox manually 
+# unset imap_passive        
+# Automatically poll subscribed mailboxes for new mail (new in 1.5.11)
+# set imap_check_subscribed
+# Reduce polling frequency to a sane level
+# set mail_check=60
+# And poll the current mailbox more often (not needed with IDLE in post 1.5.11)
+# set timeout=10
+# keep a cache of headers for faster loading (1.5.9+?)
+set header_cache=~/.hcache
+# Display download progress every 5K
+set net_inc=5
+
+# color of folders with new mail
+color sidebar_new yellow default
+
+# ctrl-n, ctrl-p to select next, prev folder
+# ctrl-o to open selected folder
+bind index \CP sidebar-prev
+bind index \CN sidebar-next
+bind index \CO sidebar-open
+bind pager \CP sidebar-prev
+bind pager \CN sidebar-next
+bind pager \CO sidebar-open
+
+macro index <f2> '<enter-command>source ~/.mutt/account.doveston<enter><change-folder>!<enter>'
+macro index <f3> '<enter-command>source ~/.mutt/account.llama<enter><change-folder>!<enter>'
+
+set editor="vim -c \"set spell spelllang=en\""
+# bind index R imap-fetch-mail
+# bind pager R imap-fetch-mail
+
+source ~/.mutt/gpg.rc
+
+# specify the uid to use when encrypting/signing
+set pgp_sign_as=0xF6D1428E
+
+# this set the number of seconds to keep in memory the passphrase used to
+# encrypt/sign the more the less secure it will be
+set pgp_timeout=3600
+
+# automatically sign all outcoming messages
+set crypt_autosign
+# sign only replies to signed messages
+set crypt_replysign
+# automatically encrypt outcoming messages
+set crypt_autoencrypt=no
+# encrypt only replies to signed messages
+set crypt_replyencrypt=yes
+# encrypt and sign replies to encrypted messages
+set crypt_replysignencrypted=yes
+# automatically verify the sign of a message when opened
+set crypt_verify_sig=yes
