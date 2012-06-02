@@ -29,7 +29,6 @@ PS1="\[${Blue}\]\u@\h\[${Color_Off}\] \W \$(git_prompt) \$ "
 
 export EDITOR="vim"
 export TERM=screen-256color
-export GPGKEY=F6D1428E
 set -o vi
 
 # don't put duplicate lines in the history. See bash(1) for more options
