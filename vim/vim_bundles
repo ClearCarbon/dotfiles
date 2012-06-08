@@ -42,6 +42,7 @@ bundle 'ruby-refactoring', :git => 'git://github.com/ecomba/vim-ruby-refactoring
 bundle 'coffee-script',    :git => 'git://github.com/kchmck/vim-coffee-script'
 bundle 'handlebars',       :git => 'git://github.com/nono/vim-handlebars.git'
 bundle 'wiki',             :git => 'git://github.com/vim-scripts/vimwiki.git'
+bundle 'cvim',             :git => 'git://github.com/vim-scripts/c.vim.git'
 
 # colours
 bundle 'inkpot',     :git => 'git://github.com/ciaranm/inkpot'
