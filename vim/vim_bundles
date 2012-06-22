@@ -34,12 +34,15 @@ bundle 'bufkill',           :git => 'git://github.com/hced/bufkill-vim.git'
 bundle 'textobj-user',      :git => 'git://github.com/kana/vim-textobj-user.git'
 bundle 'textobj-rubyblock', :git => 'git://github.com/nelstrom/vim-textobj-rubyblock'
 bundle 'scss-syntax',       :git => 'git://github.com/cakebaker/scss-syntax.vim.git'
+bundle 'html5',             :git => 'git://github.com/othree/html5.vim.git'
 
 bundle 'phpcomplete',      :git => 'git://github.com/shawncplus/phpcomplete.vim'
 bundle 'snipmate',         :git => 'git://github.com/msanders/snipmate.vim.git'
 bundle 'ruby-refactoring', :git => 'git://github.com/ecomba/vim-ruby-refactoring.git'
 bundle 'coffee-script',    :git => 'git://github.com/kchmck/vim-coffee-script'
 bundle 'handlebars',       :git => 'git://github.com/nono/vim-handlebars.git'
+bundle 'wiki',             :git => 'git://github.com/vim-scripts/vimwiki.git'
+bundle 'slime',            :git => 'git://github.com/jpalardy/vim-slime.git'
 
 # colours
 bundle 'inkpot',     :git => 'git://github.com/ciaranm/inkpot'

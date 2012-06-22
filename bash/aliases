@@ -27,6 +27,7 @@ alias ll="ls -l"
 alias la='ls -A'
 
 #alias ack="ack-grep"
+alias ed='ed -p "ed> "'
 
 # some sillyness from the interweb
 alias rmatrix='echo -ne "\e[31m" ; while true ; do echo -ne "\e[$(($RANDOM % 2 + 1))m" ; tr -c "[:print:]" " " < /dev/urandom | dd count=1 bs=50 2> /dev/null ; done'

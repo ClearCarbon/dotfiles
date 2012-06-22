@@ -421,11 +421,13 @@ nnoremap <leader>a :Ack
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 
 let g:ctrlp_custom_ignore = {
-      \ 'dir':  '\.git$\|public$',
+      \ 'dir':  'tmp\|\.git$\|system$',
       \ 'file': '\.jpg$\|\.png$\|\.gif$',
       \ }
 
 let g:buffergator_suppress_keymaps = 1
+let g:vroom_detect_spec_helper = 1
+let g:slime_target = "tmux"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Display after bundles
@@ -442,3 +444,6 @@ if has('gui_running')
 else
 end
 
+if filereadable(glob("~/.vimrc.local")) 
+  source ~/.vimrc.local
+endif
