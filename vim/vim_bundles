@@ -1,9 +1,9 @@
 #!/usr/bin/ruby
 
-#use_git_submodules true
+use_git_submodules true
 
 # tpope
-bundle 'vim-eunuch', :git => 'git://github.com/tpope/vim-eunuch.git'
+bundle 'eunuch',     :git => 'git://github.com/tpope/vim-eunuch.git'
 bundle 'fugitive',   :git => 'git://github.com/tpope/vim-fugitive.git'
 bundle 'unimpaired', :git => 'git://github.com/tpope/vim-unimpaired.git'
 bundle 'afterimage', :git => 'git://github.com/tpope/vim-afterimage.git'
@@ -35,7 +35,7 @@ bundle 'textobj-user',      :git => 'git://github.com/kana/vim-textobj-user.git'
 bundle 'textobj-rubyblock', :git => 'git://github.com/nelstrom/vim-textobj-rubyblock'
 bundle 'scss-syntax',       :git => 'git://github.com/cakebaker/scss-syntax.vim.git'
 bundle 'html5',             :git => 'git://github.com/othree/html5.vim.git'
-bundle 'wiki',             :git => 'git://github.com/vim-scripts/vimwiki.git'
+bundle 'wiki',              :git => 'git://github.com/vim-scripts/vimwiki.git'
 
 bundle 'phpcomplete',      :git => 'git://github.com/shawncplus/phpcomplete.vim'
 bundle 'snipmate',         :git => 'git://github.com/msanders/snipmate.vim.git'

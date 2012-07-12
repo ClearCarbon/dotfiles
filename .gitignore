@@ -1,7 +1,7 @@
 temp
-vim/bundle
 Gemfile.lock
 gitconfig
 tmp
 vim/.netrwhist
 vim/Gemfile*
+mutt/*

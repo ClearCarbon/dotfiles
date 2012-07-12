@@ -111,14 +111,13 @@ set hidden
 set tabstop=2
 set expandtab
 set shiftwidth=2
+set softtabstop=2
 
 " use multiple of shiftwidth when indenting with '<' and '>'
 set shiftround
 
 " set show matching parenthesis
 set showmatch
-
-set softtabstop=2
 
 set clipboard=unnamed
 
@@ -179,8 +178,8 @@ nnoremap <leader><space> :nohlsearch<cr>
 " nmap <silent> <leader>v :so $MYVIMRC<CR>
 
 " Very magic regexes in searches
-" nnoremap / /\v
-" vnoremap / /\v
+nnoremap / /\v
+vnoremap / /\v
 
 " dont use cursor keys!
 nnoremap <up> <nop>
@@ -278,7 +277,10 @@ map <leader>gR :call ShowRoutes()<cr>
 " Edit or view files in same directory as current file
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>e :edit %%
-map <leader>v :view %%
+" map <leader>v :view %%
+
+" reselect the text that was just pasted
+nnoremap <leader>v V`]
 
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
@@ -324,9 +326,9 @@ silent! map <unique> <Leader>T :VroomRunNearestTest<CR>
 "map <leader>bd :bd<cr>
 
 " avoid pressing F1
-"inoremap <F1> <ESC>
-"nnoremap <F1> <ESC>
-"vnoremap <F1> <ESC>
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
 
 if has("autocmd")
 
