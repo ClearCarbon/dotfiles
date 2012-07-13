@@ -52,9 +52,6 @@
 [submodule "vim/bundle/buffergator"]
 	path = vim/bundle/buffergator
 	url = git://github.com/jeetsukumaran/vim-buffergator
-[submodule "vim/bundle/supertab"]
-	path = vim/bundle/supertab
-	url = git://github.com/ervandew/supertab.git
 [submodule "vim/bundle/ruby"]
 	path = vim/bundle/ruby
 	url = git://github.com/vim-ruby/vim-ruby.git
