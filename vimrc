@@ -368,7 +368,7 @@ if has("autocmd")
     " PHP
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-    autocmd BufRead *.phtml set filetype=html
+    autocmd BufRead *.phtml set filetype=php
     " highlights interpolated variables in sql strings and does sql-syntax highlighting. yay
     autocmd FileType php let php_sql_query=1
     " does exactly that. highlights html inside of php strings
