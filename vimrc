@@ -245,6 +245,11 @@ map <leader>r :CtrlPMRU<cr>
 " This requires the %% mapping found below.
 map <leader>gf :ClearCtrlPCache<cr>\|:CtrlP %%<cr>
 
+" ri.vim remaps
+nnoremap  ,ri :call ri#OpenSearchPrompt(0)<cr> " horizontal split
+nnoremap  ,RI :call ri#OpenSearchPrompt(1)<cr> " vertical split
+nnoremap  ,RK :call ri#LookupNameUnderCursor()<cr> " keyword lookup
+
 " Rails specific
 map <leader>gv :ClearCtrlPCache<cr>\|:CtrlP app/views<cr>
 map <leader>gc :ClearCtrlPCache<cr>\|:CtrlP app/controllers<cr>
