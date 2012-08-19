@@ -63,3 +63,7 @@ shopt -s extglob
 
 # search for dirs in home
 export CDPATH=.:~
+
+# the default for ubuntu seems to be 0002
+# which results in 664/775 not the 644/755
+umask 0022
