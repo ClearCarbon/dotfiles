@@ -25,8 +25,8 @@ git_prompt() {
     fi
 }
 
-#PS1="\[${Blue}\]\u@\h\[${Color_Off}\] \W \$(git_prompt) \$ "
-PS1="\[${Blue}\]\u@\h\[${Color_Off}\] \W \$ "
+PS1="\[${Blue}\]\u@\h\[${Color_Off}\] \W \$(git_prompt) \$ "
+#PS1="\[${Blue}\]\u@\h\[${Color_Off}\] \W \$ "
 
 export EDITOR="vim"
 export TERM=screen-256color
