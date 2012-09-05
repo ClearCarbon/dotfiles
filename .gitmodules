@@ -139,3 +139,6 @@
 [submodule "password-store"]
 	path = password-store
 	url = http://git.zx2c4.com/password-store
+[submodule "tomorrow-theme"]
+	path = tomorrow-theme
+	url = git://github.com/chriskempson/tomorrow-theme.git
