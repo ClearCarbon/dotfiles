@@ -446,13 +446,13 @@ let g:slime_target = "tmux"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Display after bundles
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-colorscheme Tomorrow-Night-Bright
+" colorscheme Tomorrow-Night-Bright
 
-" let g:solarized_termtrans=1
-" let g:solarized_termcolors=256
-" let g:solarized_contrast="high"
-" let g:solarized_visibility="high"
-" colorscheme solarized
+let g:solarized_termtrans=1
+let g:solarized_termcolors=256
+let g:solarized_contrast="high"
+let g:solarized_visibility="high"
+colorscheme solarized
 
 " colorscheme peaksea
 " colorscheme vividchalk
