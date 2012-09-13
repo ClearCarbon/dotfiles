@@ -230,6 +230,7 @@ nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 " insert a hash rocket with <c-l>
 imap <c-l> <space>=><space>
 
+nnoremap - :Switch<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mappings
