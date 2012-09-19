@@ -128,13 +128,6 @@ set laststatus=2
 set undofile
 set undodir=~/.vim/undo
 
-" add some stuff to the statusline
-" removed this %{strftime(\"%d/%m/%y\ -\ %H:%M\")}\
-" because vim-rails didnt like it
-"set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{fugitive#statusline()}
-"set statusline=[%n]\ %<%.99f\ %h%w%m%r%y%{exists('g:loaded_rvm')?rvm#statusline():''}%=%-16(\ %l,%c-%v\ %)%P
-set statusline=[%n]\ %<%.99f\ %h%w%m%r%y%{exists('g:loaded_fugitive')?fugitive#statusline():''}%{SyntasticStatuslineFlag()}%=%-16(\ %l,%c-%v\ %)%P
-
 " Look for the file in the current directory,
 " then south until you reach home.
 "set tags=tags;~/
@@ -430,7 +423,7 @@ end
 
 " map for ack
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
-nnoremap <leader>a :Ack 
+nnoremap <leader>a :Ack
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 let g:syntastic_mode_map = { 'mode': 'passive',
       \ 'active_filetypes': ['ruby', 'php'],
@@ -444,6 +437,11 @@ let g:ctrlp_custom_ignore = {
 let g:buffergator_suppress_keymaps = 1
 let g:vroom_detect_spec_helper = 1
 let g:slime_target = "tmux"
+
+" add trailing white space indicator to power line
+call Pl#Theme#InsertSegment('ws_marker', 'after', 'lineinfo')
+let g:Powerline_symbols = 'unicode'
+"let g:Powerline_cache_enabled = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Display after bundles
@@ -464,6 +462,6 @@ if has('gui_running')
 else
 end
 
-if filereadable(glob("~/.vimrc.local")) 
+if filereadable(glob("~/.vimrc.local"))
   source ~/.vimrc.local
 endif

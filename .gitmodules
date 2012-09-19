@@ -145,3 +145,6 @@
 [submodule "vim/bundle/switch.vim"]
 	path = vim/bundle/switch.vim
 	url = git://github.com/AndrewRadev/switch.vim.git
+[submodule "vim/bundle/powerline"]
+	path = vim/bundle/powerline
+	url = git://github.com/Lokaltog/vim-powerline.git
