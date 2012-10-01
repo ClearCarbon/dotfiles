@@ -151,3 +151,6 @@
 [submodule "vim/bundle/dirdiff"]
 	path = vim/bundle/dirdiff
 	url = git://github.com/vim-scripts/DirDiff.vim.git
+[submodule "vim/bundle/mirah"]
+	path = vim/bundle/mirah
+	url = git://github.com/Neurogami/mirah-vim.git
