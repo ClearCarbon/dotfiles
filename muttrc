@@ -1,9 +1,42 @@
 set mbox_type=maildir
-set mbox="~/mail/inbox/"
-set spoolfile="~/mail/inbox/"
-set folder="~/mail/"
-set record="~/mail/sent/"
-set postponed="~/mail/postponed/"
+set folder="~/.mail"
+
+set alias_file       = "~/.mutt/alias"
+set header_cache     = "~/.mutt/cache/headers"
+set message_cachedir = "~/.mutt/cache/bodies"
+set certificate_file = "~/.mutt/certificates"
+set mailcap_path     = "~/.mutt/mailcap"
+set tmpdir           = "~/.mutt/temp"
+set signature        = "~/.mutt/sig"
+set ssl_ca_certificates_file = "/etc/ssl/certs/ca-certificates.crt"
+
+set mbox="+doveston.me.uk/INDOBX"
+set spoolfile="+doveston.me.uk/INBOX"
+set record="+doveston.me.uk/Sent"
+set postponed="+doveston.me.uk/Drafts"
+
+set wait_key = no        # shut up, mutt
+set mbox_type = Maildir  # mailbox type
+set timeout = 3          # idle time before scanning
+set mail_check = 0       # minimum time between scans
+#unset move               # gmail does that
+set delete               # don't ask, just do
+unset confirmappend      # don't ask, just do!
+set quit                 # don't ask, just do!!
+unset mark_old           # read/new is good enough for me
+set beep_new             # bell on new mails
+set pipe_decode          # strip headers and eval mimes when piping
+set thorough_search      # strip headers and eval mimes before searching
+
+# Mailboxes to show in the sidebar.
+mailboxes +doveston.me.uk/INBOX \
+          +doveston.me.uk/vim \
+          +doveston.me.uk/clojure \
+          +doveston.me.uk/python \
+          +doveston.me.uk/mercurial \
+          +doveston.me.uk/archive \
+          +doveston.me.uk/sent \
+          +doveston.me.uk/drafts \
 
 # Vim like keybinds
 # bind pager j next-line
@@ -13,28 +46,10 @@ set signature="~/.mutt/signature"
 
 set sort="reverse-date-received"
 
-# Don't wait to enter mailbox manually 
-unset imap_passive        
-# Automatically poll subscribed mailboxes for new mail
-set imap_check_subscribed
-# keep imap connection alive by polling intermittently (time in seconds)
-set imap_keepalive=300
-# Reduce polling frequency to a sane level
-set mail_check=120
-# And poll the current mailbox more often
-set timeout=10
-# Display download progress every 5K
-set net_inc=5
-
 # color of folders with new mail
 color sidebar_new yellow default
 
 set sort=threads
-
-set header_cache="~/.mutt/cache/headers"
-set message_cachedir="~/.mutt/cache/bodies"
-set certificate_file="~/.mutt/certificates"
-set ssl_ca_certificates_file="/etc/ssl/certs/ca-certificates.crt"
 
 # ctrl-n, ctrl-p to select next, prev folder
 # ctrl-o to open selected folder
@@ -48,20 +63,17 @@ bind pager \Co sidebar-open
 macro index \Cb '<enter-command>toggle sidebar_visible<enter><refresh>'
 macro pager \Cb '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
 
-macro index <f2> '<enter-command>source ~/.mutt/account.doveston<enter><change-folder>!<enter>' 'Open doveston account'
-macro index <f3> '<enter-command>source ~/.mutt/account.llama<enter><change-folder>!<enter>' 'Open llama account'
+#macro index <f2> '<enter-command>source ~/.mutt/account.doveston<enter><change-folder>!<enter>' 'Open doveston account'
+#macro index <f3> '<enter-command>source ~/.mutt/account.llama<enter><change-folder>!<enter>' 'Open llama account'
 
 set editor="vim -c \"set spell spelllang=en\""
-# bind index R imap-fetch-mail
-# bind pager R imap-fetch-mail
 
 source ~/.mutt/gpg.rc
 #source ~/.mutt/solarized/mutt-colors-solarized-dark-256.muttrc
 source ~/.mutt/solarized/mutt-colors-solarized-dark-16.muttrc
 
 # Auto display html
-set mailcap_path = ~/.mutt/mailcap
-auto_view   text/html
+auto_view text/html
 
 # specify the uid to use when encrypting/signing
 set pgp_sign_as=0xF6D1428E

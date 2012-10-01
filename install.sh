@@ -10,7 +10,7 @@ then
   fi
 fi
 
-for file in vimrc tmux.conf bash_profile bashrc ackrc muttrc vim bash mutt gitignore tmx
+for file in vimrc tmux.conf bash_profile bashrc ackrc muttrc vim bash mutt gitignore tmx offlineimaprc
 do
   if [ -a $HOME/.${file} ]
   then echo ".$file found, doing nothing"

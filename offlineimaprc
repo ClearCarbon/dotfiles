@@ -1,0 +1,22 @@
+[general]
+ui = TTYUI
+accounts = doveston-me-uk
+fsync = False
+pythonfile = ~/dotfiles/offlineimap.py
+
+[Account doveston-me-uk]
+localrepository = doveston-me-uk-local
+remoterepository = doveston-me-uk-remote
+
+[Repository doveston-me-uk-local]
+type = Maildir
+localfolders = ~/.mail/doveston.me.uk
+
+[Repository doveston-me-uk-remote]
+maxconnections = 1
+ssl = yes
+type = IMAP
+remotehost = imap.1and1.co.uk
+remoteuser = jon@doveston.me.uk
+remotepasseval = get_password("personal/1and1-email")
+realdelete = yes
