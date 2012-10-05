@@ -7,3 +7,5 @@ mutt/account.*
 mutt/password.*
 mutt/cache
 mutt/certificates
+*.pyc
+*.crt
