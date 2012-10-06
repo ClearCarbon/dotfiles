@@ -353,8 +353,8 @@ if has("autocmd")
     " Ruby
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     autocmd BufNewFile,BufRead Rakefile,*.rake,*.pill,Capfile,Gemfile,config.ru,Guardfile setfiletype ruby
-    autocmd BufNewFile,BufRead *.css.scss.erb,*.css.scss setfiletype scss.eruby
-    autocmd BufNewFile,BufRead *.js,*.js.erb setfiletype javascript.eruby
+    autocmd BufNewFile,BufRead *.scss.erb setfiletype scss.eruby
+    autocmd BufNewFile,BufRead *.js.erb setfiletype javascript.eruby
     if has("folding")
       autocmd FileType ruby set foldenable
       autocmd FileType ruby set foldmethod=syntax
