@@ -3,9 +3,7 @@ Gemfile.lock
 tmp
 vim/.netrwhist
 vim/Gemfile*
-mutt/account.*
-mutt/password.*
-mutt/cache
-mutt/certificates
+mutt*
 *.pyc
 *.crt
+password-store
