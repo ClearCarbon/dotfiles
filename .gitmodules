@@ -130,9 +130,6 @@
 [submodule "vim/bundle/ri"]
 	path = vim/bundle/ri
 	url = git://github.com/danchoi/ri.vim.git
-[submodule "password-store"]
-	path = password-store
-	url = http://git.zx2c4.com/password-store
 [submodule "vim/bundle/switch.vim"]
 	path = vim/bundle/switch.vim
 	url = git://github.com/AndrewRadev/switch.vim.git
