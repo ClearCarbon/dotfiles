@@ -441,7 +441,6 @@ nnoremap - :Switch<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Display after bundles
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" colorscheme Tomorrow-Night-Bright
 
 let g:solarized_termtrans=1
 let g:solarized_termcolors=256

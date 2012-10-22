@@ -1,16 +1,7 @@
 #!/bin/bash
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-if [ -d $DIR/tomorrow-theme/vim ]
-then
-  echo "Found tomorrow theme"
-  if [ -a $DIR/vim/bundle/tomorrow ]
-  then echo "vim tomorrow theme found, doing nothing"
-  else ln -sf $DIR/tomorrow-theme/vim $DIR/vim/bundle/tomorrow && echo "vim tomorrow installed"
-  fi
-fi
-
-for file in vimrc tmux.conf bash_profile bashrc ackrc muttrc vim bash mutt gitignore tmx mbsyncrc msmtprc
+for file in vimrc tmux.conf bash_profile bashrc ackrc vim bash gitignore tmx
 do
   if [ -a $HOME/.${file} ]
   then echo ".$file found, doing nothing"
