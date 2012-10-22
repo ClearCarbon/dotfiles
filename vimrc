@@ -166,11 +166,6 @@ nmap <leader>w :w!<cr>
 " clear search buffer when hitting return
 nnoremap <leader><space> :nohlsearch<cr>
 
-" Quickly edit/reload the vimrc file
-" open vimrc in vertically split window
-" nmap <silent> <leader>e <C-w><C-v><C-l>:e $MYVIMRC<CR>
-" nmap <silent> <leader>v :so $MYVIMRC<CR>
-
 " Very magic regexes in searches
 nnoremap / /\v
 vnoremap / /\v
@@ -194,10 +189,9 @@ nnoremap <C-k> <C-W>k
 nnoremap <C-h> <C-W>h
 nnoremap <C-l> <C-W>l
 
-" nnoremap <C-J> <C-W>J
-" nnoremap <C-K> <C-W>K
-" nnoremap <C-H> <C-W>H
-" nnoremap <C-L> <C-W>L
+" insert lines (without changing mode)
+" nnoremap <C-J> mao<ESC>`a
+" nnoremap <C-K> maO<ESC>`a
 
 " makes j and k work the way you expect
 nnoremap j gj
@@ -217,13 +211,11 @@ set textwidth=80
 "   autocmd BufEnter * match OverLength /\%80v.*/
 " augroup END
 
-"map leader-W to strip white space
+" map leader-W to strip white space
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
 " insert a hash rocket with <c-l>
 imap <c-l> <space>=><space>
-
-nnoremap - :Switch<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mappings
@@ -442,6 +434,9 @@ let g:slime_target = "tmux"
 call Pl#Theme#InsertSegment('ws_marker', 'after', 'lineinfo')
 let g:Powerline_symbols = 'unicode'
 "let g:Powerline_cache_enabled = 0
+
+" this is for the switch plugin
+nnoremap - :Switch<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Display after bundles
