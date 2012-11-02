@@ -1,4 +1,5 @@
-My dotfiles, at the moment vim and tmux.  Vimrc using git submodules manage vim
+Fork of hatoishi's dot files to make them sane for Myself
+Vimrc using git submodules manage vim
 plugins.  Some of the vimrc settings require vim 7.3 or greater.
 
 I use the word 'my' loosely. All files have been patched together from many
