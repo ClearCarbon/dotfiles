@@ -75,3 +75,34 @@ function decom () {
   fi
 }
 
+alias lsl='ls -lh'
+alias lsa='ls -lah'
+
+
+function gits()
+{
+  if [[ $# > 0 ]]
+  then
+    command=$@
+   # $command = ${command/\-m/\-m \"}
+   # if [[ $command == *-m* ]]
+   # then
+   #   $command = $command"\""
+   #  fi
+    
+   # echo $command
+
+   git $command
+   echo ""
+   echo "----"
+   echo ""
+  fi  
+
+  git status
+}
+
+function wrk()
+{
+  cd ~/working/$@                                                                                                                                                                                              
+}
+
