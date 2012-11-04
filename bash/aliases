@@ -75,3 +75,5 @@ function decom () {
   fi
 }
 
+alias lsl='ls -lh'
+alias lsa='ls -lah'
