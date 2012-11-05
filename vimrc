@@ -459,3 +459,10 @@ end
 if filereadable(glob("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
+
+"  insert and remove blank lines in command mode
+"  Ctrl-j/k deletes blank line below/above, and Alt-j/k inserts.
+"nnoremap <silent><C-j> m`:silent +g/\m^\s*$/d<CR>``:noh<CR>
+"nnoremap <silent><C-k> m`:silent -g/\m^\s*$/d<CR>``:noh<CR>
+nnoremap <silent><C-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
+nnoremap <silent><C-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
