@@ -224,6 +224,7 @@ imap <c-l> <space>=><space>
 
 " Open files with <leader>f
 map <leader>f :ClearCtrlPCache<cr>\|:CtrlPMixed<cr>
+"map <leader>f :CtrlPMixed<cr>
 " map <leader>b :CtrlPBuffer<cr>
 map <leader>b :BuffergatorOpen<cr>
 map <leader>r :CtrlPMRU<cr>
@@ -447,7 +448,8 @@ let g:solarized_termcolors=256
 let g:solarized_contrast="high"
 let g:solarized_visibility="high"
 colorscheme solarized
-
+" colorscheme inkpot
+" colorscheme vividchalk
 " colorscheme peaksea
 " colorscheme vividchalk
 " colorscheme codeschool
