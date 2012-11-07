@@ -223,8 +223,8 @@ imap <c-l> <space>=><space>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Open files with <leader>f
-map <leader>f :ClearCtrlPCache<cr>\|:CtrlPMixed<cr>
-"map <leader>f :CtrlPMixed<cr>
+map <leader>c :ClearCtrlPCache<cr>\|:CtrlPMixed<cr>
+map <leader>f :CtrlPMixed<cr>
 " map <leader>b :CtrlPBuffer<cr>
 map <leader>b :BuffergatorOpen<cr>
 map <leader>r :CtrlPMRU<cr>
@@ -295,8 +295,7 @@ silent! map <leader>p :% ! php_beautifier -s2 -l "IndentStyles(style=allman) Arr
 " set winheight=999
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Unused mappings ATM
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Unused mappings ATM """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " The following will make tabs and trailing
 " spaces visible when requested
