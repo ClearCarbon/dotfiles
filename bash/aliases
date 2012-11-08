@@ -91,7 +91,7 @@ function gits()
     
    # echo $command
 
-   git $command
+   `git $command`
    echo ""
    echo "----"
    echo ""
