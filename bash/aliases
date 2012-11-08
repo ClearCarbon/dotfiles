@@ -82,16 +82,24 @@ function gits()
 {
   if [[ $# > 0 ]]
   then
-    command=$@
-   # $command = ${command/\-m/\-m \"}
-   # if [[ $command == *-m* ]]
-   # then
-   #   $command = $command"\""
-   #  fi
-    
-   # echo $command
+    command="git "
+    for ((i=0; i<=$#; i++))
+    do
+      eval arg=\$$i
+      if [[ $arg != "bash" ]]
+      then
+        if [[ $(echo $arg|wc -w) -ne 1 ]]
+        then
+          command=$command" \"$arg\""
+        else
+          command=$command" $arg"
+        fi
 
-   `git $command`
+      fi
+    done
+    
+  bash -c "$command"
+   
    echo ""
    echo "----"
    echo ""
