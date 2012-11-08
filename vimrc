@@ -295,8 +295,7 @@ silent! map <leader>p :% ! php_beautifier -s2 -l "IndentStyles(style=allman) Arr
 " set winheight=999
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Unused mappings ATM
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Unused mappings ATM """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " The following will make tabs and trailing
 " spaces visible when requested
@@ -448,7 +447,8 @@ let g:solarized_termcolors=256
 let g:solarized_contrast="high"
 let g:solarized_visibility="high"
 colorscheme solarized
-
+" colorscheme inkpot
+" colorscheme vividchalk
 " colorscheme peaksea
 " colorscheme vividchalk
 " colorscheme codeschool
