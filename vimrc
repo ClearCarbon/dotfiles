@@ -223,8 +223,9 @@ imap <c-l> <space>=><space>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Open files with <leader>f
-map <leader>c :ClearCtrlPCache<cr>\|:CtrlPMixed<cr>
-map <leader>f :CtrlPMixed<cr>
+map <leader>c :ClearCtrlPCache<cr>\|:CtrlP<cr>
+map <leader>z :ClearCtrlPCache<cr>\|:CtrlP /usr/share/php/libzend-framework-php/<cr>
+map <leader>f :CtrlP<cr>
 " map <leader>b :CtrlPBuffer<cr>
 map <leader>b :BuffergatorOpen<cr>
 map <leader>r :CtrlPMRU<cr>
