@@ -9,6 +9,10 @@ do
   fi
 done
 
+#term config
+cp $HOME/.config/Terminal/terminalrc $HOME/.config/Terminal/terminalrc.backup
+ln -sf $DIR/xfceterm/terminalrc $HOME/.config/Terminal/terminalrc
+
 # gitconfig
 if [ -a $HOME/.gitconfig ]
 then echo ".gitconfig found, doing nothing"
