@@ -1,4 +1,5 @@
 [Configuration]
+FontName=Liberation Mono 10
 ColorCursor=#9393a1a1a1a1
 ColorForeground=#FDFDF6F6E3E3
 ColorBackground=#00002B2B3636
@@ -19,7 +20,6 @@ ColorPalette14=#6c6c7171c4c4
 ColorPalette15=#9393a1a1a1a1
 ColorPalette16=#fdfdf6f6e3e3
 Term=xterm-color
-FontName=Droid Sans Mono 10
 MiscAlwaysShowTabs=FALSE
 MiscBell=FALSE
 MiscBordersDefault=TRUE
@@ -36,8 +36,6 @@ MiscTabCloseButtons=TRUE
 MiscTabCloseMiddleClick=TRUE
 MiscTabPosition=GTK_POS_TOP
 MiscHighlightUrls=TRUE
-TabActivityColor=#262656568080
 MiscScrollAlternateScreen=TRUE
-ScrollingLines=10000
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
 
