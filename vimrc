@@ -223,15 +223,9 @@ imap <c-l> <space>=><space>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Open files with <leader>f
-map <leader>c :ClearCtrlPCache<cr>\|:CtrlP<cr>
 map <leader>z :ClearCtrlPCache<cr>\|:CtrlP /usr/share/php/libzend-framework-php/<cr>
 map <leader>f :CtrlP<cr>
-" map <leader>b :CtrlPBuffer<cr>
 map <leader>b :BuffergatorOpen<cr>
-map <leader>r :CtrlPMRU<cr>
-" Open files, limited to the directory of the current file, with <leader>gf
-" This requires the %% mapping found below.
-map <leader>gf :ClearCtrlPCache<cr>\|:CtrlP %%<cr>
 
 " ri.vim remaps
 nnoremap  ,ri :call ri#OpenSearchPrompt(0)<cr> " horizontal split
@@ -239,17 +233,6 @@ nnoremap  ,RI :call ri#OpenSearchPrompt(1)<cr> " vertical split
 nnoremap  ,RK :call ri#LookupNameUnderCursor()<cr> " keyword lookup
 
 " Rails specific
-map <leader>gv :ClearCtrlPCache<cr>\|:CtrlP app/views<cr>
-map <leader>gc :ClearCtrlPCache<cr>\|:CtrlP app/controllers<cr>
-map <leader>gm :ClearCtrlPCache<cr>\|:CtrlP app/models<cr>
-map <leader>gh :ClearCtrlPCache<cr>\|:CtrlP app/helpers<cr>
-map <leader>gl :ClearCtrlPCache<cr>\|:CtrlP lib<cr>
-map <leader>gp :ClearCtrlPCache<cr>\|:CtrlP public<cr>
-map <leader>gs :ClearCtrlPCache<cr>\|:CtrlP app/assets/stylesheets<cr>
-map <leader>gj :ClearCtrlPCache<cr>\|:CtrlP app/assets/javascripts<cr>
-map <leader>gr :e config/routes.rb<cr>
-map <leader>gg :e Gemfile<cr>
-
 " Show the current routes in the split
 function! ShowRoutes()
   " Requires 'scratch' plugin
@@ -287,40 +270,6 @@ silent! map <unique> <Leader>T :VroomRunNearestTest<CR>
 
 silent! map <leader>q :!ctags --extra=+f --exclude=.git --tag-relative --exclude=log -R application library<cr>
 silent! map <leader>p :% ! php_beautifier -s2 -l "IndentStyles(style=allman) ArrayNested() Lowercase() NewLines(before=T_CLASS:T_PUBLIC:T_PRIVATE:T_PROTECTED)"<CR>
-
-" set winwidth=100
-" " We have to have a winheight bigger than we want to set winminheight. But if
-" " we set winheight to be huge before winminheight, the winminheight set will fail.
-" set winheight=5
-" set winminheight=5
-" set winheight=999
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Unused mappings ATM """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" The following will make tabs and trailing
-" spaces visible when requested
-"set listchars=tab:>-,trail:·,eol:$
-"nmap <silent> <leader>s :set nolist!<cr>
-
-" fold html tag
-"nnoremap <leader>ft Vatzf
-
-" double j for escape
-"inoremap jj <ESC>
-
-" reselect the text that was just pasted
-"nnoremap <leader>v V`]
-
-" w!! lets you write with sudo, even after loading the file
-"cmap w!! w !sudo tee % >/dev/null
-
-" use tab to move around brackets
-"nnoremap <tab> %
-"vnoremap <tab> %
-
-" Close the current buffer
-"map <leader>bd :bd<cr>
 
 " avoid pressing F1
 inoremap <F1> <ESC>
@@ -405,11 +354,6 @@ set guioptions-=T
 set guioptions-=m
 set t_Co=256
 
-" If need be use this
-if has('gui_running')
-else
-end
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Bundles config
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -434,7 +378,6 @@ let g:slime_target = "tmux"
 " add trailing white space indicator to power line
 call Pl#Theme#InsertSegment('ws_marker', 'after', 'lineinfo')
 let g:Powerline_symbols = 'unicode'
-"let g:Powerline_cache_enabled = 0
 
 " this is for the switch plugin
 nnoremap - :Switch<cr>
@@ -443,21 +386,7 @@ nnoremap - :Switch<cr>
 " Display after bundles
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-let g:solarized_termtrans=1
-" let g:solarized_termcolors=256
-" let g:solarized_contrast="high"
-let g:solarized_visibility="high"
-" colorscheme solarized
 colorscheme base16-default
-" colorscheme inkpot
-" colorscheme vividchalk
-" colorscheme peaksea
-" colorscheme vividchalk
-" colorscheme codeschool
-" If need be use this
-if has('gui_running')
-else
-end
 
 if filereadable(glob("~/.vimrc.local"))
   source ~/.vimrc.local
