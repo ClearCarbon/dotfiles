@@ -1,6 +1,7 @@
 #!/bin/bash
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-
+# DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+DIR=~/dotfiles
+echo DIR
 for file in vimrc tmux.conf bash_profile bashrc ackrc vim bash gitignore tmx
 do
   if [ -e $HOME/.${file} ]
