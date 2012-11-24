@@ -3,7 +3,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 for file in vimrc tmux.conf bash_profile bashrc ackrc vim bash gitignore tmx
 do
-  if [ -a $HOME/.${file} ]
+  if [ -e $HOME/.${file} ]
   then echo ".$file found, doing nothing"
   else ln -sf $DIR/$file $HOME/.$file && echo ".$file installed"
   fi
