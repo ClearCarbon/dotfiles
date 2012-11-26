@@ -1,9 +1,9 @@
-Fork of hatoishi's dot files to make them sane for Myself
+Fork of hatoishi's dot files to make them sane for myself
 Vimrc using git submodules manage vim
 plugins.  Some of the vimrc settings require vim 7.3 or greater.
 
-I use the word 'my' loosely. All files have been patched together from many
-different sources and customised to my own tastes.
+Uses base16 as a color scheme. Please make sure your terminal settings match.
+base16 details can be found at - https://github.com/chriskempson/base16
 
 ## Install
 
@@ -15,14 +15,3 @@ different sources and customised to my own tastes.
 
 The install script is not destructive so if you want to replace the original
 file, delete them first.
-
-## Install in OSX
-
-Some of the bash settings (globstar 
-
-6) Install homebrew
-7) brew install bash
-8) add /usr/local/bin/bash to /etc/shells
-9) move /usr/local/bin to the top of /etc/paths
-10) chsh -s /usr/local/bin/bash $USER
-

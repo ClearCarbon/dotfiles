@@ -1,17 +1,14 @@
 #!/bin/bash
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-
+# DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+DIR=~/dotfiles
+echo DIR
 for file in vimrc tmux.conf bash_profile bashrc ackrc vim bash gitignore tmx
 do
-  if [ -a $HOME/.${file} ]
+  if [ -e $HOME/.${file} ]
   then echo ".$file found, doing nothing"
   else ln -sf $DIR/$file $HOME/.$file && echo ".$file installed"
   fi
 done
-
-#term config
-cp $HOME/.config/Terminal/terminalrc $HOME/.config/Terminal/terminalrc.backup
-ln -sf $DIR/xfceterm/terminalrc $HOME/.config/Terminal/terminalrc
 
 # gitconfig
 if [ -a $HOME/.gitconfig ]
