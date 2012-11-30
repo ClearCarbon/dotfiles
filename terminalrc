@@ -1,6 +1,6 @@
 [Configuration]
-FontName=Liberation Mono 10
-ColorCursor=#dd00dd00dd00
+FontName=Droid Sans Mono 10
+ColorCursor=#79ce79ce79ce
 ColorForeground=#dd00dd00dd00
 ColorBackground=#115511551155
 ColorPalette1=#115511551155
