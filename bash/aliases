@@ -114,3 +114,4 @@ function wrk()
   cd ~/working/$@                                                                                                                                                                                              
 }
 
+alias clip="xclip -sel clip"
