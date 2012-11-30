@@ -54,9 +54,9 @@ set wildmenu
 " options are), also add the following
 set wildmode=list:longest
 
-set history=1000 " increase command history
+set history=10000 " increase command history
 
-set undolevels=1000
+set undolevels=10000
 
 " show the $ at the end of word changes etc
 set cpoptions+=$
@@ -100,7 +100,7 @@ set title
 " single line. Setting the option below will start
 " the scrolling three lines before the border,
 " keeping more context around where you’re working.
-set scrolloff=3
+set scrolloff=5
 
 set ruler
 
@@ -351,11 +351,6 @@ endif
 
 set background=dark
 set encoding=utf-8
-set guifont=Bitstream\ Vera\ Sans\ Mono\ 9
-" Turn off toolbar and menu
-set guioptions-=T
-set guioptions-=m
-set t_Co=256
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Bundles config
@@ -401,9 +396,6 @@ colorscheme base16-default
 " colorscheme vividchalk
 " colorscheme codeschool
 " If need be use this
-if has('gui_running')
-else
-end
 colorscheme base16-default
 
 if filereadable(glob("~/.vimrc.local"))
