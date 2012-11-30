@@ -189,6 +189,7 @@ nnoremap <C-k> <C-W>k
 nnoremap <C-h> <C-W>h
 nnoremap <C-l> <C-W>l
 
+
 " insert lines (without changing mode)
 " nnoremap <C-J> mao<ESC>`a
 " nnoremap <C-K> maO<ESC>`a
@@ -228,6 +229,7 @@ map <leader>f :CtrlPMixed<cr>
 map <leader>m :CtrlPMRU<cr>
 map <leader>b :BuffergatorOpen<cr>
 
+nnoremap <leader>vs :vs<cr>:bn<cr>
 " ri.vim remaps
 nnoremap  ,ri :call ri#OpenSearchPrompt(0)<cr> " horizontal split
 nnoremap  ,RI :call ri#OpenSearchPrompt(1)<cr> " vertical split
