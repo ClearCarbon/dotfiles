@@ -115,12 +115,6 @@
 [submodule "vim/bundle/peaksea"]
 	path = vim/bundle/peaksea
 	url = git://github.com/vim-scripts/peaksea.git
-[submodule "vim/bundle/solarized"]
-	path = vim/bundle/solarized
-	url = git://github.com/altercation/vim-colors-solarized
-[submodule "mutt/solarized"]
-	path = mutt/solarized
-	url = git://github.com/altercation/mutt-colors-solarized.git
 [submodule "vim/bundle/php"]
 	path = vim/bundle/php
 	url = git://github.com/StanAngeloff/php.vim.git
