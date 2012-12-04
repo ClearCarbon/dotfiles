@@ -395,6 +395,7 @@ endif
 "nnoremap <silent><C-k> m`:silent -g/\m^\s*$/d<CR>``:noh<CR>
 nnoremap <silent><C-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
 nnoremap <silent><C-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
+"pm to set pastemode on and mp to remove it
 nnoremap <leader>pm :set paste<cr>
 nnoremap <leader>mp :set paste!<cr>
 
