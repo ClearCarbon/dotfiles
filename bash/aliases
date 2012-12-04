@@ -116,3 +116,4 @@ function wrk()
 
 alias clip="xclip -sel clip"
 alias fn="find . -name"
+alias tmx="~/.tmx"
