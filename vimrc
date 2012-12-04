@@ -226,7 +226,6 @@ imap <c-l> <space>=><space>
 " Open files with <leader>f
 map <leader>z :ClearCtrlPCache<cr>\|:CtrlP /usr/share/php/libzend-framework-php/<cr>
 map <leader>f :CtrlPMixed<cr>
-map <leader>m :CtrlPMRU<cr>
 map <leader>b :BuffergatorOpen<cr>
 
 nnoremap <leader>vs :vs<cr>:bn<cr>
@@ -396,5 +395,7 @@ endif
 "nnoremap <silent><C-k> m`:silent -g/\m^\s*$/d<CR>``:noh<CR>
 nnoremap <silent><C-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
 nnoremap <silent><C-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
+nnoremap <leader>pm :set paste<cr>
+nnoremap <leader>mp :set paste!<cr>
 
 set colorcolumn=80
