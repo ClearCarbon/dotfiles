@@ -397,5 +397,7 @@ nnoremap <silent><C-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
 "pm to set pastemode on and mp to remove it
 nnoremap <leader>pm :set paste<cr>
 nnoremap <leader>mp :set paste!<cr>
+nnoremap <leader>n :set number<cr>
+nnoremap <leader>r :set relativenumber<cr>
 
 set colorcolumn=80
