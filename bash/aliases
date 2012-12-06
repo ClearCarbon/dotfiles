@@ -109,6 +109,14 @@ function gits()
   git status
 }
 
+up() {
+    local path i
+    for (( i=0; i < $1; i++ )); do
+        path+=../
+    done
+    cd "$path"
+}
+
 function wrk()
 {
   cd ~/working/$@                                                                                                                                                                                              
