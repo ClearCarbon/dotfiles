@@ -225,7 +225,7 @@ imap <c-l> <space>=><space>
 
 " Open files with <leader>f
 map <leader>z :ClearCtrlPCache<cr>\|:CtrlP /usr/share/php/libzend-framework-php/<cr>
-map <leader>f :CtrlPMixed<cr>
+map <leader>f :CtrlP<cr>
 map <leader>b :BuffergatorOpen<cr>
 
 nnoremap <leader>vs :vs<cr>:bn<cr>
@@ -366,6 +366,7 @@ let g:ctrlp_custom_ignore = {
       \ 'dir':  'tmp\|\.git$\|system$',
       \ 'file': '\.jpg$\|\.png$\|\.gif$',
       \ }
+let g:ctrlp_max_height = 20
 
 let g:buffergator_suppress_keymaps = 1
 let g:vroom_detect_spec_helper = 1
