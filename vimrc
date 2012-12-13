@@ -166,10 +166,6 @@ nmap <leader>w :w!<cr>
 " clear search buffer when hitting return
 nnoremap <leader><space> :nohlsearch<cr>
 
-" Very magic regexes in searches
-nnoremap / /\v
-vnoremap / /\v
-
 " dont use cursor keys!
 nnoremap <up> <nop>
 nnoremap <down> <nop>
@@ -271,11 +267,6 @@ silent! map <unique> <Leader>t :VroomRunTestFile<CR>
 silent! map <unique> <Leader>T :VroomRunNearestTest<CR>
 
 silent! map <leader>p :% ! php_beautifier -s2 -l "IndentStyles(style=allman) ArrayNested() Lowercase() NewLines(before=T_CLASS:T_PUBLIC:T_PRIVATE:T_PROTECTED)"<CR>
-
-" avoid pressing F1
-inoremap <F1> <ESC>
-nnoremap <F1> <ESC>
-vnoremap <F1> <ESC>
 
 if has("autocmd")
 
