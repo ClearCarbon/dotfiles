@@ -2,20 +2,11 @@ call pathogen#runtime_append_all_bundles()
 call pathogen#infect()
 call pathogen#helptags()
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Setup
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 " Not bothered about vi compatibility
 " This must be first, because it changes other options as side effect
 set nocompatible
 
-
 runtime macros/matchit.vim
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" General
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " more secure
 set modelines=0
@@ -90,17 +81,12 @@ set nobackup
 set noswapfile
 set nowb
 
-" A running gvim will always have a window
-" title, but when vim is run within an xterm,
-" by default it inherits the terminal’s current title.
-set title
-
 " When the cursor is moved outside the viewport of
 " the current window, the buffer is scrolled by a
 " single line. Setting the option below will start
 " the scrolling three lines before the border,
 " keeping more context around where you’re working.
-set scrolloff=5
+set scrolloff=8
 
 set ruler
 
@@ -118,8 +104,6 @@ set shiftround
 
 " set show matching parenthesis
 set showmatch
-
-set clipboard=unnamed
 
 " show the statusline all the time
 set laststatus=2
