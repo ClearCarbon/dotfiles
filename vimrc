@@ -85,7 +85,7 @@ set nowb
 "top or bottom for scrolling to start
 "a large value effectively keeps the current
 "line centered at all times
-set scrolloff=9999
+set scrolloff=9
 
 set ruler
 
