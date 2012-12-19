@@ -152,10 +152,6 @@ nnoremap <leader><space> :nohlsearch<cr>
 " dont use cursor keys!
 nnoremap <up> <nop>
 nnoremap <down> <nop>
-"inoremap <up> <nop>
-"inoremap <down> <nop>
-"inoremap <left> <nop>
-"inoremap <right> <nop>
 
 " Close all the buffers
 map <leader>ba :1,300 bd!<cr>
@@ -168,11 +164,6 @@ nnoremap <C-k> <C-W>k
 nnoremap <C-h> <C-W>h
 nnoremap <C-l> <C-W>l
 
-
-" insert lines (without changing mode)
-" nnoremap <C-J> mao<ESC>`a
-" nnoremap <C-K> maO<ESC>`a
-
 " makes j and k work the way you expect
 nnoremap j gj
 nnoremap k gk
@@ -184,12 +175,6 @@ nnoremap ; :
 set nowrap
 "set wrap
 set textwidth=80
-"set formatoptions=qrn1
-" set colorcolumn=80
-" augroup vimrc_autocmds
-"   autocmd BufEnter * highlight OverLength ctermbg=darkgrey guibg=#592929
-"   autocmd BufEnter * match OverLength /\%80v.*/
-" augroup END
 
 " map leader-W to strip white space
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
