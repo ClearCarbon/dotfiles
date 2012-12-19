@@ -81,12 +81,11 @@ set nobackup
 set noswapfile
 set nowb
 
-" When the cursor is moved outside the viewport of
-" the current window, the buffer is scrolled by a
-" single line. Setting the option below will start
-" the scrolling three lines before the border,
-" keeping more context around where you’re working.
-set scrolloff=8
+"determins how far the cursor has to be from the
+"top or bottom for scrolling to start
+"a large value effectively keeps the current
+"line centered at all times
+set scrolloff=9999
 
 set ruler
 
