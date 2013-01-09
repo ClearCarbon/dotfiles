@@ -359,5 +359,6 @@ nnoremap <leader>pm :set paste<cr>
 nnoremap <leader>mp :set paste!<cr>
 nnoremap <leader>n :set number<cr>
 nnoremap <leader>r :set relativenumber<cr>
+nnoremap <leader>p ^i
 
 set colorcolumn=80
