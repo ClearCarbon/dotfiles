@@ -362,3 +362,6 @@ nnoremap <leader>n :set number<cr>
 nnoremap <leader>r :set relativenumber<cr>
 
 set colorcolumn=80
+
+au VimEnter * vsplit
+au VimEnter * vsplit
