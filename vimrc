@@ -356,8 +356,7 @@ endif
 " nnoremap <silent><C-J> :set paste<CR>m`o<Esc>``:set nopaste<CR>
 " nnoremap <silent><C-K> :set paste<CR>m`O<Esc>``:set nopaste<CR>
 "pm to set pastemode on and mp to remove it
-nnoremap <leader>pm :set paste<cr>
-nnoremap <leader>mp :set paste!<cr>
+nnoremap <leader>p :set paste!<cr>
 nnoremap <leader>n :set number<cr>
 nnoremap <leader>r :set relativenumber<cr>
 
