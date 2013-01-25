@@ -193,6 +193,7 @@ map <leader>f :CtrlP<cr>
 map <leader>b :BuffergatorOpen<cr>
 
 nnoremap <leader>vs :vs<cr>:bn<cr>
+nnoremap <leader>hs :sp<cr>:bn<cr>
 " ri.vim remaps
 nnoremap  ,ri :call ri#OpenSearchPrompt(0)<cr> " horizontal split
 nnoremap  ,RI :call ri#OpenSearchPrompt(1)<cr> " vertical split
@@ -350,13 +351,12 @@ endif
 
 "  insert and remove blank lines in command mode
 "  Ctrl-j/k deletes blank line below/above, and Alt-j/k inserts.
-"nnoremap <silent><C-j> m`:silent +g/\m^\s*$/d<CR>``:noh<CR>
-"nnoremap <silent><C-k> m`:silent -g/\m^\s*$/d<CR>``:noh<CR>
-nnoremap <silent><C-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
-nnoremap <silent><C-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
+" nnoremap <silent><C-J> m`:silent +g/\m^\s*$/d<CR>``:noh<CR>
+" nnoremap <silent><C-K> m`:silent -g/\m^\s*$/d<CR>``:noh<CR>
+" nnoremap <silent><C-J> :set paste<CR>m`o<Esc>``:set nopaste<CR>
+" nnoremap <silent><C-K> :set paste<CR>m`O<Esc>``:set nopaste<CR>
 "pm to set pastemode on and mp to remove it
-nnoremap <leader>pm :set paste<cr>
-nnoremap <leader>mp :set paste!<cr>
+nnoremap <leader>p :set paste!<cr>
 nnoremap <leader>n :set number<cr>
 nnoremap <leader>r :set relativenumber<cr>
 nnoremap d "_d
@@ -365,3 +365,19 @@ nnoremap D "_D
 vnoremap D "_D
 
 set colorcolumn=80
+
+au VimEnter * vsplit
+au VimEnter * vsplit
+
+function s:MkNonExDir(file, buf)
+    if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
+        let dir=fnamemodify(a:file, ':h')
+        if !isdirectory(dir)
+            call mkdir(dir, 'p')
+        endif
+    endif
+endfunction
+augroup BWCCreateDir
+    autocmd!
+    autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
+augroup END
