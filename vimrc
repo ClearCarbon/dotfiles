@@ -359,10 +359,6 @@ endif
 nnoremap <leader>p :set paste!<cr>
 nnoremap <leader>n :set number<cr>
 nnoremap <leader>r :set relativenumber<cr>
-nnoremap d "_d
-vnoremap d "_d
-nnoremap D "_D
-vnoremap D "_D
 
 set colorcolumn=80
 
