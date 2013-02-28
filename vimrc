@@ -227,8 +227,6 @@ map <leader>e :edit %%
 " reselect the text that was just pasted
 nnoremap <leader>v V`]
 
-" Switch between the last two files
-nnoremap <leader><leader> <c-^>
 
 " Run this file
 let g:vroom_map_keys = 0
@@ -362,8 +360,6 @@ nnoremap <leader>r :set relativenumber<cr>
 
 set colorcolumn=80
 
-au VimEnter * vsplit
-au VimEnter * vsplit
 
 function s:MkNonExDir(file, buf)
     if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
