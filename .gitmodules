@@ -4,9 +4,6 @@
 [submodule "vim/bundle/fugitive"]
 	path = vim/bundle/fugitive
 	url = git://github.com/tpope/vim-fugitive.git
-[submodule "vim/bundle/afterimage"]
-	path = vim/bundle/afterimage
-	url = git://github.com/tpope/vim-afterimage.git
 [submodule "vim/bundle/abolish"]
 	path = vim/bundle/abolish
 	url = git://github.com/tpope/vim-abolish.git
