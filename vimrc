@@ -142,8 +142,6 @@ let g:vroom_map_keys = 0
 silent! map <unique> <Leader>t :VroomRunTestFile<CR>
 silent! map <unique> <Leader>T :VroomRunNearestTest<CR>
 
-"silent! map <leader>p :% ! php_beautifier -s2 -l "IndentStyles(style=allman) ArrayNested() Lowercase() NewLines(before=T_CLASS:T_PUBLIC:T_PRIVATE:T_PROTECTED)"<CR>
-
 if has("autocmd")
 
   augroup vimrcEx
@@ -213,6 +211,27 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Bundles config
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"ctrlp config
+let ctrlp_filter_greps = "".
+    \ "egrep -iv '\\.(" .
+    \ "jar|swp|swo|so|o|pyc|jpe?g|png|gif|mo|po" .
+    \ ")$' | " .
+    \ "egrep -v '^(\\./)?(" .
+    \ "deploy/|lib/|deploy/vendor/|.git/|.hg/|.svn/" .
+    \ ")'"
+ 
+let my_ctrlp_git_command = "" .
+    \ "cd %s && git ls-files | " .
+    \ ctrlp_filter_greps
+ 
+if has("unix")
+    let my_ctrlp_user_command = "" .
+    \ "find %s '(' -type f -or -type l ')' -maxdepth 15 -not -path '*/\\.*/*' | " .
+    \ ctrlp_filter_greps
+endif
+ 
+let g:ctrlp_user_command = ['.git/', my_ctrlp_git_command, my_ctrlp_user_command]
 
 " map for ack
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
