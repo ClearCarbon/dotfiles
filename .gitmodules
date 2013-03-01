@@ -142,3 +142,6 @@
 [submodule "vim/bundle/snipmate"]
 	path = vim/bundle/snipmate
 	url = https://github.com/msanders/snipmate.vim
+[submodule "vim/bundle/remotedebugger"]
+	path = vim/bundle/remotedebugger
+	url = https://github.com/vim-scripts/DBGp-Remote-Debugger-Interface.git
