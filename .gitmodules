@@ -4,12 +4,6 @@
 [submodule "vim/bundle/fugitive"]
 	path = vim/bundle/fugitive
 	url = git://github.com/tpope/vim-fugitive.git
-[submodule "vim/bundle/unimpaired"]
-	path = vim/bundle/unimpaired
-	url = git://github.com/tpope/vim-unimpaired.git
-[submodule "vim/bundle/afterimage"]
-	path = vim/bundle/afterimage
-	url = git://github.com/tpope/vim-afterimage.git
 [submodule "vim/bundle/abolish"]
 	path = vim/bundle/abolish
 	url = git://github.com/tpope/vim-abolish.git
@@ -139,9 +133,9 @@
 [submodule "vim/bundle/base16"]
 	path = vim/bundle/base16
 	url = git://github.com/chriskempson/base16-vim.git
-[submodule "vim/bundle/snipmate"]
-	path = vim/bundle/snipmate
-	url = https://github.com/msanders/snipmate.vim
 [submodule "vim/bundle/remotedebugger"]
 	path = vim/bundle/remotedebugger
 	url = https://github.com/vim-scripts/DBGp-Remote-Debugger-Interface.git
+[submodule "vim/bundle/easymotion"]
+	path = vim/bundle/easymotion
+	url = https://github.com/Lokaltog/vim-easymotion.git
