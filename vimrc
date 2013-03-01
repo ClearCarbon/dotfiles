@@ -53,6 +53,9 @@ set tags+=~/zend.tags
 set autoread
 set background=dark
 set encoding=utf-8
+set nowrap
+set textwidth=80
+set colorcolumn=80
 
 let mapleader = ","
 let g:mapleader = ","
@@ -90,10 +93,6 @@ nnoremap k gk
 
 " make ; do the same thing as :
 nnoremap ; :
-
-" handle long lines
-set nowrap
-set textwidth=80
 
 map <leader>z :ClearCtrlPCache<cr>\|:CtrlP /usr/share/php/libzend-framework-php/<cr>
 " Open files with <leader>f
