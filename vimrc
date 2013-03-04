@@ -212,6 +212,7 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "ctrlp config
+let g:ctrlp_max_files=99999
 let ctrlp_filter_greps = "".
     \ "egrep -iv '\\.(" .
     \ "jar|swp|swo|so|o|pyc|jpe?g|png|gif|mo|po" .
