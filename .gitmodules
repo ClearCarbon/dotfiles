@@ -79,9 +79,6 @@
 [submodule "vim/bundle/html5"]
 	path = vim/bundle/html5
 	url = git://github.com/othree/html5.vim.git
-[submodule "vim/bundle/wiki"]
-	path = vim/bundle/wiki
-	url = git://github.com/vim-scripts/vimwiki.git
 [submodule "vim/bundle/phpcomplete"]
 	path = vim/bundle/phpcomplete
 	url = git://github.com/shawncplus/phpcomplete.vim
@@ -100,9 +97,6 @@
 [submodule "vim/bundle/inkpot"]
 	path = vim/bundle/inkpot
 	url = git://github.com/ciaranm/inkpot
-[submodule "vim/bundle/vividchalk"]
-	path = vim/bundle/vividchalk
-	url = git://github.com/tpope/vim-vividchalk.git
 [submodule "vim/bundle/peaksea"]
 	path = vim/bundle/peaksea
 	url = git://github.com/vim-scripts/peaksea.git
