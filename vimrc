@@ -1,104 +1,16 @@
 set nocompatible
-runtime macros/matchit.vim
-set modelines=0
-set backspace=indent,eol,start
+filetype off                   " required!
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
 
-syntax on
-filetype on
-filetype plugin on
-filetype indent on
+Bundle 'gmarik/vundle'
 
-set smarttab
-set autoindent
-set copyindent
-set showcmd
-set showmode
+:so ~/.vim/config/basesetup.vim
+:so ~/.vim/config/mappings.vim
 
-set foldlevelstart=99
-set wildmenu
-set wildmode=list:longest
-set history=10000
-set undolevels=10000
-set cpoptions+=$
-set number
-set hlsearch
-set incsearch
-set ignorecase
-set smartcase
-set gdefault
-set cursorline
-set ttyfast
-set nobackup
-set noswapfile
-set nowb
-set scrolloff=9
-set ruler
-set hidden
-set tabstop=2
-set expandtab
-set shiftwidth=2
-set softtabstop=2
-set shiftround
-set showmatch
-set laststatus=2
-set undofile
-set undodir=~/.vim/undo
-set tags+=gems.tags
-set tags+=~/zend.tags
-set autoread
-set background=dark
-set encoding=utf-8
-set nowrap
-set textwidth=80
-set colorcolumn=80
-
-let mapleader = ","
-let g:mapleader = ","
-
-colorscheme base16-default
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Mappings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Don't use Ex mode, use Q for formatting
-map Q gq
-
-" clear search buffer 
-nnoremap <leader><space> :nohlsearch<cr>
-
-" dont use cursor keys!
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-
-" Close all the buffers
-map <leader>ba :1,300 bd!<cr>
-
-" Use the arrows to something usefull
-nnoremap <right> :bn<cr>
-nnoremap <left> :bp<cr>
-nnoremap <C-j> <C-W>j
-nnoremap <C-k> <C-W>k
-nnoremap <C-h> <C-W>h
-nnoremap <C-l> <C-W>l
-
-" makes j and k work the way you expect
-nnoremap j gj
-nnoremap k gk
-
-" make ; do the same thing as :
-nnoremap ; :
-
-map <leader>z :ClearCtrlPCache<cr>\|:CtrlP /usr/share/php/libzend-framework-php/<cr>
-" Open files with <leader>f
-map <leader>f :CtrlP<cr>
-
-"reverse paste mode
-nnoremap <leader>p :set paste!<cr>
-
-"vs and hs splits
-nnoremap <leader>vs :vs<cr>:bn<cr>
-nnoremap <leader>hs :sp<cr>:bn<cr>
+for f in split(glob('~/.vim/config/plugins/*.vim'), '\n')
+  exe 'source' f
+endfor
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Rails
@@ -129,7 +41,6 @@ map <leader>e :edit %%
 
 " reselect the text that was just pasted
 nnoremap <leader>v V`]
-
 
 " Run this file
 let g:vroom_map_keys = 0
@@ -203,65 +114,12 @@ if has("autocmd")
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Bundles config
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-"ctrlp config
-let g:ctrlp_max_files=99999
-let ctrlp_filter_greps = "".
-    \ "egrep -iv '\\.(" .
-    \ "jar|swp|swo|so|o|pyc|jpe?g|png|gif|mo|po" .
-    \ ")$' | " .
-    \ "egrep -v '^(\\./)?(" .
-    \ "deploy/|lib/|deploy/vendor/|.git/|.hg/|.svn/" .
-    \ ")'"
- 
-let my_ctrlp_git_command = "" .
-    \ "cd %s && git ls-files | " .
-    \ ctrlp_filter_greps
- 
-if has("unix")
-    let my_ctrlp_user_command = "" .
-    \ "find %s '(' -type f -or -type l ')' -maxdepth 15 -not -path '*/\\.*/*' | " .
-    \ ctrlp_filter_greps
-endif
- 
-let g:ctrlp_user_command = ['.git/', my_ctrlp_git_command, my_ctrlp_user_command]
-
-" map for ack
-let g:ackprg="ack-grep -H --nocolor --nogroup --column"
-nnoremap <leader>a :Ack
-let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
-let g:syntastic_mode_map = { 'mode': 'passive',
-      \ 'active_filetypes': ['ruby', 'php'],
-      \ 'passive_filetypes': [] }
-
-let g:ctrlp_custom_ignore = {
-      \ 'dir':  'tmp\|\.git$\|system$',
-      \ 'file': '\.jpg$\|\.png$\|\.gif$',
-      \ }
-let g:ctrlp_max_height = 20
-
-let g:buffergator_suppress_keymaps = 1
-let g:vroom_detect_spec_helper = 1
-let g:slime_target = "tmux"
-
-" add trailing white space indicator to power line
-call Pl#Theme#InsertSegment('ws_marker', 'after', 'lineinfo')
-let g:Powerline_symbols = 'unicode'
-
-" this is for the switch plugin
-nnoremap - :Switch<cr>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Additionals
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 
 if filereadable(glob("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
-
 
 "auto writ edirectory
 function s:MkNonExDir(file, buf)

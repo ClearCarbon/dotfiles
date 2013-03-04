@@ -7,3 +7,4 @@ mutt*
 *.pyc
 *.crt
 password-store
+vim/bundle
