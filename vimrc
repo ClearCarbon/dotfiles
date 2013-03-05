@@ -10,7 +10,7 @@ Bundle 'gmarik/vundle'
 
 "iterate through a named plugins directory (these often call Bundle to 
 "include plugins"
-for f in split(glob('~/.vim/config/plugins/*.vim'), '\n')
+for f in split(glob('~/.vim/config/addons/*.vim'), '\n')
   exe 'source' f
 endfor
 
