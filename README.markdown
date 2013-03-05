@@ -14,8 +14,10 @@ command and its specific configuration, along with any related plugins
 
 1) git clone into home directory
 2) cd dotfiles
-3) Load Vim and run :BundleInstall
-4) sh install.sh
+3) git submodule init
+4) git submodule update
+5) Load Vim and run :BundleInstall
+6) sh install.sh
 
 The install script will install vimrc, tmux.conf, bash_profile, bashrc, ackrc
 vim folder, bash folder, gitignore, tmx folder. It will not overwrite any
