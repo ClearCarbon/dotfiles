@@ -29,7 +29,6 @@ nnoremap k gk
 " make ; do the same thing as :
 nnoremap ; :
 
-
 "reverse paste mode
 nnoremap <leader>p :set paste!<cr>
 

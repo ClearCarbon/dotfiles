@@ -1,16 +1,13 @@
 filetype plugin indent on
-
+set nocompatible
 set modelines=0
 set backspace=indent,eol,start
-
 syntax on
-
 set smarttab
 set autoindent
 set copyindent
 set showcmd
 set showmode
-
 set foldlevelstart=99
 set wildmenu
 set wildmode=list:longest
