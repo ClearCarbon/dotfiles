@@ -35,3 +35,8 @@ nnoremap <leader>p :set paste!<cr>
 "vs and hs splits
 nnoremap <leader>vs :vs<cr>:bn<cr>
 nnoremap <leader>hs :sp<cr>:bn<cr>
+
+"debugging
+vnoremap <leader>gl :diffget //3<cr>
+vnoremap <leader>gh :diffget //2<cr>
+nnoremap <leader>du :diffupdate<cr>
