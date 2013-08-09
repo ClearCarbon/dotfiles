@@ -1,8 +1,10 @@
 Bundle 'kien/ctrlp.vim'
 
 map <leader>z :ClearCtrlPCache<cr>\|:CtrlP /usr/share/php/libzend-framework-php/<cr>
-" Open files with <leader>f
 map <leader>f :CtrlP<cr>
+map <leader>r :CtrlPMRU<cr>
+map <leader>b :CtrlPBuffer<cr>
+map <leader>gf :ClearCtrlPCache<cr>\|:CtrlP %%<cr>
 
 let g:ctrlp_max_files=99999
 let ctrlp_filter_greps = "".

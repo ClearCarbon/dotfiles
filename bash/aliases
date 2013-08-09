@@ -4,7 +4,6 @@ alias ..='cd ..'
 # ls
 alias ack="ack-grep"
 alias ed='ed -p "ed> "'
-alias bitly='~/dotfiles/bitly.sh'
 alias be='bundle exec'
 
 # decompress any file
@@ -29,9 +28,11 @@ extract () {
      fi
 }
 
-alias lsl='ls -lh'
-alias ll='ls -lh'
-alias lsa='ls -lah'
+alias ls='ls --color=auto'
+alias lsl='ls -lh --color=auto'
+alias ll='ls -lh --color=auto'
+alias lsa='ls -lah --color=auto'
+alias l='ls -lah --color=auto'
 
 function gits()
 {

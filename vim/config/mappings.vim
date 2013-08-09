@@ -38,9 +38,6 @@ nmap <leader>w :w!<cr>
 " map leader-W to strip white space
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
-" insert a hash rocket with <c-l>
-imap <C-r> <space>=><space>
-
 " Edit or view files in same directory as current file
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>e :edit %%
