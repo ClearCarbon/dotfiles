@@ -6,7 +6,7 @@ map Q gq
 
 " clear search buffer 
 nnoremap <leader><space> :nohlsearch<cr>
-nnoremap <esc> :noh<return><esc>
+nnoremap <esc><esc> :nohlsearch<cr><esc>
 
 " Close all the buffers
 map <leader>ba :1,300 bd!<cr>
