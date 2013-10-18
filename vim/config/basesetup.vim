@@ -24,5 +24,5 @@ set undodir=~/.vim/undo
 set tags+=gems.tags
 set background=dark
 set nowrap
-set textwidth=80
+set textwidth=0
 set colorcolumn=80
