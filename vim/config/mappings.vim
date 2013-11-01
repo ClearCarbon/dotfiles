@@ -47,3 +47,6 @@ map <leader>e :edit %%
 nnoremap <leader><leader> <c-^>
 
 nnoremap <leader>q gqip
+
+" Save file from insert mode
+imap <F5> <Esc>:w<CR>
