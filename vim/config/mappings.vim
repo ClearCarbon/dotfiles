@@ -8,7 +8,7 @@ map Q gq
 nnoremap <leader><space> :nohlsearch<cr>
 nnoremap <esc><esc> :nohlsearch<cr><esc>
 
-" Close all the buffers
+" Close All The Buffers
 map <leader>ba :1,300 bd!<cr>
 
 " Use the arrows to something usefull
@@ -43,10 +43,13 @@ nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>e :edit %%
 
-" Switch between the last two files
+" Switch between open files
 nnoremap <leader><leader> <c-^>
 
 nnoremap <leader>q gqip
 
 " Save file from insert mode
 imap <F5> <Esc>:w<CR>
+
+"title case selection 
+vnoremap <leader>tc :s/\%V\<\(\w\)\(\w*\)\>/\u\1\L\2/g<cr>:nohlsearch<cr>
