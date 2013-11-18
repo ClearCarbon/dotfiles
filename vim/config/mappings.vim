@@ -49,7 +49,7 @@ nnoremap <leader><leader> <c-^>
 nnoremap <leader>q gqip
 
 " Save file from insert mode
-imap <F5> <Esc>:w<CR>
+imap <F6> <Esc>:w<CR>
 
 "title case selection 
 vnoremap <leader>tc :s/\%V\<\(\w\)\(\w*\)\>/\u\1\L\2/g<cr>:nohlsearch<cr>
