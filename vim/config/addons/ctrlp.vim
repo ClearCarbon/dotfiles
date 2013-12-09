@@ -15,18 +15,12 @@ let ctrlp_filter_greps = "".
     \ "deploy/|lib/|deploy/vendor/|.git/|.hg/|.svn/" .
     \ ")'"
  
-let my_ctrlp_git_command = "" .
-    \ "cd %s && git ls-files | " .
-    \ ctrlp_filter_greps
- 
 if has("unix")
     let my_ctrlp_user_command = "" .
     \ "find %s '(' -type f -or -type l ')' -maxdepth 15 -not -path '*/\\.*/*' | " .
     \ ctrlp_filter_greps
 endif
  
-let g:ctrlp_user_command = ['.git/', my_ctrlp_git_command, my_ctrlp_user_command]
-
 let g:ctrlp_custom_ignore = {
       \ 'dir':  'tmp\|\.git$\|system$',
       \ 'file': '\.jpg$\|\.png$\|\.gif$',
