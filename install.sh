@@ -11,7 +11,7 @@ do
 done
 
 # gitconfig
-if [ -a $HOME/.gitconfig ]
+if [ -e $HOME/.gitconfig ]
 then echo ".gitconfig found, doing nothing"
 else 
   read -p "Name " name
