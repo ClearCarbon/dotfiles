@@ -22,7 +22,7 @@ if has("unix")
 endif
  
 let g:ctrlp_custom_ignore = {
-      \ 'dir':  'vendor\|tmp\|\.git$\|system$',
+      \ 'dir':  'node_modules\|bower_components\|vendor\|tmp\|\.git$\|system$',
       \ 'file': '\.jpg$\|\.png$\|\.gif$',
       \ }
 let g:ctrlp_max_height = 20
