@@ -14,6 +14,8 @@ done
 if [ -e $HOME/.gitconfig ]
 then echo ".gitconfig found, doing nothing"
 else 
+  echo "Git Details"
+  echo "-----------"
   read -p "Name " name
   read -p "Email " email
   read -p "Github username " github
