@@ -28,11 +28,11 @@ extract () {
      fi
 }
 
-alias ls='ls --color=auto'
-alias lsl='ls -lh --color=auto'
-alias ll='ls -lh --color=auto'
-alias lsa='ls -lah --color=auto'
-alias l='ls -lah --color=auto'
+alias ls='ls'
+alias lsl='ls -lh'
+alias ll='ls -lh'
+alias lsa='ls -lah'
+alias l='ls -lah'
 
 function gits()
 {

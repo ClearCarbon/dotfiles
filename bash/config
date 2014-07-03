@@ -9,7 +9,7 @@ HISTCONTROL=ignoredups:ignorespace
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
+HISTSIZE=10000
 HISTFILESIZE=2000
 HISTTIMEFORMAT="%d/%m/%y %T "
 
@@ -27,8 +27,8 @@ fi
 
 # missing or swapping characters
 shopt -s cdspell
-shopt -s globstar
-shopt -s checkjobs
+# shopt -s globstar
+# shopt -s checkjobs
 shopt -s cmdhist
 shopt -s extglob
 
