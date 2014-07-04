@@ -10,10 +10,6 @@ source ~/.bash/aliases
 source ~/.bash/completions
 source ~/.bash/config
 
-if [ -f ~/.bash/liquidprompt/liquidprompt ]; then
-  source ~/.bash/liquidprompt/liquidprompt
-fi
-
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
