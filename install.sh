@@ -2,7 +2,7 @@
 # DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 DIR=~/dotfiles
 echo DIR
-for file in vimrc tmux.conf bash_profile bashrc ackrc vim bash gitignore tmx liquidpromptrc ansible.cfg gemrc
+for file in vimrc tmux.conf bash_profile bashrc ackrc vim bash gitignore tmx liquidpromptrc ansible.cfg gemrc zshrc
 do
   if [ -e $HOME/.${file} ]
   then echo ".$file found, doing nothing"
