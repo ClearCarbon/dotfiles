@@ -82,5 +82,5 @@ function wrk()
 
 alias clip="xclip -sel clip"
 alias fn="find . -name"
-alias grp='grep -Rnif - . <<<'
 alias tmx="~/.tmx"
+grp () { grep -Rni $1 . }
