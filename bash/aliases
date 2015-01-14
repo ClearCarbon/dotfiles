@@ -1,10 +1,15 @@
-# cd
 alias ..='cd ..'
 
-# ls
 alias ack="ack-grep"
-alias ed='ed -p "ed> "'
 alias be='bundle exec'
+alias fn="find . -name"
+alias tmx="~/.tmx"
+alias pg_start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
+alias ls='ls'
+alias lsl='ls -lh'
+alias ll='ls -lh'
+alias lsa='ls -lah'
+alias l='ls -lah'
 
 # decompress any file
 extract () {
@@ -28,42 +33,6 @@ extract () {
      fi
 }
 
-alias ls='ls'
-alias lsl='ls -lh'
-alias ll='ls -lh'
-alias lsa='ls -lah'
-alias l='ls -lah'
-
-function gits()
-{
-  if [[ $# > 0 ]]
-  then
-    command="git "
-    for ((i=0; i<=$#; i++))
-    do
-      eval arg=\$$i
-      if [[ $arg != "bash" ]]
-      then
-        if [[ $(echo $arg|wc -w) -ne 1 ]]
-        then
-          command=$command" \"$arg\""
-        else
-          command=$command" $arg"
-        fi
-
-      fi
-    done
-    
-  bash -c "$command"
-   
-   echo ""
-   echo "----"
-   echo ""
-  fi  
-
-  git status
-}
-
 up() {
     str=""
     count=0
@@ -75,13 +44,4 @@ up() {
     cd $str
 }
 
-function wrk()
-{
-  cd ~/working/$@                                                                                                                                                                                              
-}
-
-alias clip="xclip -sel clip"
-alias fn="find . -name"
-alias tmx="~/.tmx"
 grp () { grep -Rni $1 . }
-alias pg_start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"

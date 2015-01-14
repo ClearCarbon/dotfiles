@@ -12,8 +12,10 @@ nnoremap <esc><esc> :nohlsearch<cr><esc>
 map <leader>ba :1,300 bd!<cr>
 
 " Use the arrows to something usefull
-nnoremap <right> :bn<cr>
-nnoremap <left> :bp<cr>
+nnoremap <right>  <NOP>
+nnoremap <left> <NOP>
+nnoremap <up> <NOP>
+nnoremap <down> <NOP>
 nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
 nnoremap <C-h> <C-W>h
@@ -28,6 +30,9 @@ nnoremap ; :
 
 "reverse paste mode
 nnoremap <leader>p :set paste!<cr>
+
+nnoremap ¬ :bnext<cr>
+nnoremap ˙ :bprev<cr>
 
 "vs and hs splits
 nnoremap <leader>vs :vs<cr>:bn<cr>

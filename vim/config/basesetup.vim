@@ -1,11 +1,10 @@
-filetype plugin indent on
+" filetype plugin indent on
 set nocompatible
 set modelines=1
 set foldlevelstart=99
 set wildmode=list:longest
 set history=10000
 set undolevels=10000
-set cpoptions+=$
 set number
 set hlsearch
 set ignorecase
