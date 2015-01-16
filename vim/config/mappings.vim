@@ -11,11 +11,6 @@ nnoremap <esc><esc> :nohlsearch<cr><esc>
 " Close All The Buffers
 map <leader>ba :1,300 bd!<cr>
 
-" Use the arrows to something usefull
-nnoremap <right>  <NOP>
-nnoremap <left> <NOP>
-nnoremap <up> <NOP>
-nnoremap <down> <NOP>
 nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
 nnoremap <C-h> <C-W>h
