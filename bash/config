@@ -6,3 +6,5 @@ HISTSIZE=10000
 HISTFILESIZE=2000
 HISTTIMEFORMAT="%d/%m/%y %T "
 export CDPATH=.:~
+
+bindkey '^R' history-incremental-search-backward
