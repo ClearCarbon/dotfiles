@@ -1,5 +1,4 @@
 export EDITOR="vim"
-export TERM=screen-256color
 set -o vi
 
 HISTSIZE=10000
