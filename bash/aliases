@@ -10,6 +10,8 @@ alias lsl='ls -lh'
 alias ll='ls -lh'
 alias lsa='ls -lah'
 alias l='ls -lah'
+alias dr='docker-compose run web'
+alias dc='docker-compose'
 
 # decompress any file
 extract () {
