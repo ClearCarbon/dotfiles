@@ -10,6 +10,11 @@ do
   fi
 done
 
+# install oh my zsh first
+if [ -n "$ZSH_VERSION" ]; then
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+fi
+
 # files we want to overwrite no matter what
 for file in zshrc
 do
