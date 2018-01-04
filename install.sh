@@ -2,7 +2,7 @@
 # DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 DIR=~/dotfiles
 echo DIR
-for file in vimrc tmux.conf bash_profile bashrc ackrc vim bash gitignore tmx liquidpromptrc ansible.cfg gemrc zshrc
+for file in vimrc tmux.conf bash_profile bashrc ackrc vim bash gitignore tmx liquidpromptrc ansible.cfg gemrc
 do
   if [ -e $HOME/.${file} ]
   then echo ".$file found, doing nothing"
@@ -10,10 +10,19 @@ do
   fi
 done
 
+# files we want to overwrite no matter what
+for file in zshrc
+do
+  if [ \( -f "${file}" \) ]
+  then mv $HOME/.$file $HOME/.$file.old && echo "existing .$file backed up to .$file.old"
+  fi
+  ln -sf $DIR/$file $HOME/.$file && echo ".$file installed"
+done
+
 # gitconfig
 if [ -e $HOME/.gitconfig ]
 then echo ".gitconfig found, doing nothing"
-else 
+else
   echo "Git Details"
   echo "-----------"
   read -p "Name " name
