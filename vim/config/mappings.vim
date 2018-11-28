@@ -26,8 +26,8 @@ nnoremap ; :
 "reverse paste mode
 nnoremap <leader>p :set paste!<cr>
 
-nnoremap ¬ :bnext<cr>
-nnoremap ˙ :bprev<cr>
+nnoremap bn :bnext<CR>
+nnoremap bp :bprevious<CR>
 
 "vs and hs splits
 nnoremap <leader>vs :vs<cr>:bn<cr>
