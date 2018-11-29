@@ -7,7 +7,6 @@ if [ -f ~/.localrc ]; then
 fi
 
 source ~/.bash/aliases
-source ~/.bash/completions
 source ~/.bash/config
 
 # set PATH so it includes user's private bin if it exists
