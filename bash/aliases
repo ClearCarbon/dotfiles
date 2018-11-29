@@ -1,17 +1,13 @@
 alias ..='cd ..'
 
-alias ack="ack-grep"
 alias be='bundle exec'
 alias fn="find . -name"
 alias tmx="~/.tmx"
-alias pg_start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
 alias ls='ls'
 alias lsl='ls -lh'
 alias ll='ls -lh'
 alias lsa='ls -lah'
 alias l='ls -lah'
-alias dr='docker-compose run web'
-alias dc='docker-compose'
 
 # decompress any file
 extract () {
