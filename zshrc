@@ -3,7 +3,7 @@ export ZSH=/home/chris/.oh-my-zsh
 ZSH_THEME="agnoster"
 
 plugins=(
-  git autojump gitfast git-extras
+  git autojump gitfast git-extras rails dircycle docker extract
 )
 
 source $ZSH/oh-my-zsh.sh
