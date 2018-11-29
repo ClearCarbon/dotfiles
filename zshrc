@@ -3,7 +3,7 @@ export ZSH=/home/chris/.oh-my-zsh
 ZSH_THEME="agnoster"
 
 plugins=(
-  git autojump
+  git autojump gitfast git-extras
 )
 
 source $ZSH/oh-my-zsh.sh
