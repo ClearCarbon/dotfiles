@@ -3,7 +3,7 @@ export ZSH=/home/chris/.oh-my-zsh
 ZSH_THEME="agnoster"
 
 plugins=(
-  git autojump gitfast git-extras rails dircycle docker extract
+  git autojump gitfast git-extras rails dircycle docker extract zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -22,3 +22,5 @@ export PATH="$PATH:$HOME/.rvm/bin"
 prompt_dir() {
   prompt_segment blue black "%1~"
 }
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'
