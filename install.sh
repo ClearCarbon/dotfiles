@@ -2,7 +2,8 @@
 # DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 DIR=~/dotfiles
 echo DIR
-for file in vimrc tmux.conf bash_profile bashrc vim bash gitignore tmx liquidpromptrc ansible.cfg gemrc
+
+for file in gitignore gemrc
 do
   if [ -e $HOME/.${file} ]
   then echo ".$file found, doing nothing"
@@ -14,15 +15,6 @@ done
 if [ -n "$ZSH_VERSION" ]; then
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
-
-# files we want to overwrite no matter what
-for file in zshrc
-do
-  if [ \( -f "${file}" \) ]
-  then mv $HOME/.$file $HOME/.$file.old && echo "existing .$file backed up to .$file.old"
-  fi
-  ln -sf $DIR/$file $HOME/.$file && echo ".$file installed"
-done
 
 # gitconfig
 if [ -e $HOME/.gitconfig ]
