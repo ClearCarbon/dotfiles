@@ -1,0 +1,231 @@
+set encoding=utf-8
+" Minpac Initialization
+
+" Normally this if-block is not needed, because `:set nocp` is done
+" automatically when .vimrc is found. However, this might be useful
+" when you execute `vim -u .vimrc` from the command line.
+if &compatible
+  " `:set nocp` has many side effects. Therefore this should be done
+  " only when 'compatible' is set.
+  set nocompatible
+endif
+
+packadd minpac
+
+call minpac#init()
+
+" minpac must have {'type': 'opt'} so that it can be loaded with `packadd`.
+call minpac#add('k-takata/minpac', {'type': 'opt'})
+
+" Add other plugins here.
+call minpac#add('vim-jp/syntax-vim-ex')
+call minpac#add('overcache/NeoSolarized')
+call minpac#add('vim-ruby/vim-ruby')
+call minpac#add('tpope/vim-rails')
+call minpac#add('ctrlpvim/ctrlp.vim')
+call minpac#add('mg979/vim-visual-multi')
+call minpac#add('vim-airline/vim-airline')
+call minpac#add('vim-airline/vim-airline-themes')
+call minpac#add('airblade/vim-gitgutter')
+call minpac#add('ap/vim-buftabline')
+call minpac#add('tpope/vim-commentary')
+call minpac#add('Yggdroot/indentLine')
+call minpac#add('kchmck/vim-coffee-script')
+call minpac#add('tpope/vim-sensible')
+call minpac#add('junegunn/vim-easy-align')
+call minpac#add('groenewege/vim-less')
+call minpac#add('vim-scripts/Rename2')
+call minpac#add('thoughtbot/vim-rspec')
+call minpac#add('preservim/nerdtree')
+"call minpac#add('Shougo/denite.nvim')
+
+:packloadall
+
+command! PackUpdate call minpac#update()
+command! PackClean call minpac#clean()
+
+" (Neo)Vim Configuration
+" By Daniel Miessler
+" August 2019
+" Modified by Chris Hunt
+" October 2020
+
+" BASIC CONFIGURATION
+
+" rename leader
+let mapleader = ","
+
+" Run commands with semicolon
+nnoremap ; :
+
+" Save the current buffer using the leader key
+noremap <Leader>w :w<CR>
+
+" Save and exit Vim using the leader key
+noremap <Leader>e :wq<CR>
+
+" Enable syntax highlighting
+syntax on
+
+" Set the shell
+set shell=/bin/zsh
+
+" Autochange in current directory (https://vim.fandom.com/wiki/Set_working_directory_to_the_current_file)
+" set autochdir
+autocmd BufEnter * silent! lcd %:p:h
+
+" Clipboard functionality (paste from system)
+vnoremap  <leader>y "+y
+nnoremap  <leader>y "+y
+nnoremap <leader>p "+p
+vnoremap <leader>p "+p
+
+"" ADDITIONAL CONFIGURATION
+set number
+
+" Appearance
+" required for theme
+set termguicolors
+colorscheme NeoSolarized
+
+" Spelling
+nnoremap <leader>sp :set spell<CR>
+nnoremap <leader>s ]s
+nnoremap <leader>f 1z=
+
+" Paste mode
+nnoremap <leader>pa :set nopaste!<CR>
+
+" Pane navigation
+nnoremap <A-h> <C-w>h
+nnoremap <A-j> <C-w>j
+nnoremap <A-k> <C-w>k
+nnoremap <A-l> <C-w>l
+
+" Buffer navigation
+nnoremap <C-l> :bnext<CR>
+nnoremap <C-h> :bprev<CR>
+
+" Kill the arrow keys
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+
+"Airline settings
+"
+let g:airline_theme='solarized'
+let g:airline_powerline_fonts = 1
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = '☰'
+let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.dirty='⚡'
+
+" CtrlP Settings
+"
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+"refresh ctrl-p by holding alt
+nnoremap <C-A-P> :CtrlPClearCache \| :CtrlP<CR>
+
+" vim rspec
+"
+map <C-T> :call RunCurrentSpecFile()<CR>
+map <C-R> :call RunNearestSpec()<CR>
+"map <C-L> :call RunLastSpec()<CR>
+map <C-Y> :call RunAllSpecs()<CR>
+
+" Nerdtree
+"
+map <C-n> :NERDTreeToggle<CR>
+
+" Denite settings
+
+" === Denite setup ==="
+" Use ripgrep for searching current directory for files
+" By default, ripgrep will respect rules in .gitignore
+"   --files: Print each file that would be searched (but don't search)
+"   --glob:  Include or exclues files for searching that match the given glob
+"            (aka ignore .git files)
+"
+" call denite#custom#var('file/rec', 'command', ['rg', '--files', '--glob', '!.git'])
+
+" Use ripgrep in place of "grep"
+" call denite#custom#var('grep', 'command', ['rg'])
+
+" Custom options for ripgrep
+"   --vimgrep:  Show results with every match on it's own line
+"   --hidden:   Search hidden directories and files
+"   --heading:  Show the file name above clusters of matches from each file
+"   --S:        Search case insensitively if the pattern is all lowercase
+"call denite#custom#var('grep', 'default_opts', ['--hidden', '--vimgrep', '--heading', '-S'])
+"
+"" Recommended defaults for ripgrep via Denite docs
+"call denite#custom#var('grep', 'recursive_opts', [])
+"call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
+"call denite#custom#var('grep', 'separator', ['--'])
+"call denite#custom#var('grep', 'final_opts', [])
+"
+"" Remove date from buffer list
+"call denite#custom#var('buffer', 'date_format', '')
+"
+"" Custom options for Denite
+""   auto_resize             - Auto resize the Denite window height automatically.
+""   prompt                  - Customize denite prompt
+""   direction               - Specify Denite window direction as directly below current pane
+""   winminheight            - Specify min height for Denite window
+""   highlight_mode_insert   - Specify h1-CursorLine in insert mode
+""   prompt_highlight        - Specify color of prompt
+""   highlight_matched_char  - Matched characters highlight
+""   highlight_matched_range - matched range highlight
+"let s:denite_options = {'default' : {
+"\ 'split': 'floating',
+"\ 'start_filter': 1,
+"\ 'auto_resize': 1,
+"\ 'source_names': 'short',
+"\ 'prompt': 'λ ',
+"\ 'highlight_matched_char': 'QuickFixLine',
+"\ 'highlight_matched_range': 'Visual',
+"\ 'highlight_window_background': 'Visual',
+"\ 'highlight_filter_background': 'DiffAdd',
+"\ 'winrow': 1,
+"\ 'vertical_preview': 1
+"\ }}
+"
+"" Loop through denite options and enable them
+"function! s:profile(opts) abort
+"  for l:fname in keys(a:opts)
+"    for l:dopt in keys(a:opts[l:fname])
+"      call denite#custom#option(l:fname, l:dopt, a:opts[l:fname][l:dopt])
+"    endfor
+"  endfor
+"endfunction
+"
+"call s:profile(s:denite_options)
+"
+"autocmd FileType denite call s:denite_my_settings()
+"function! s:denite_my_settings() abort
+"  nnoremap <silent><buffer><expr> <CR>
+"  \ denite#do_map('do_action')
+"  nnoremap <silent><buffer><expr> d
+"  \ denite#do_map('do_action', 'delete')
+"  nnoremap <silent><buffer><expr> p
+"  \ denite#do_map('do_action', 'preview')
+"  nnoremap <silent><buffer><expr> q
+"  \ denite#do_map('quit')
+"  nnoremap <silent><buffer><expr> i
+"  \ denite#do_map('open_filter_buffer')
+"  nnoremap <silent><buffer><expr> <Space>
+"  \ denite#do_map('toggle_select').'j'
+"  nnoremap <silent><buffer><expr> <Esc>
+"  \ denite#do_map('quit')
+"endfunction
+"
+"nnoremap <C-p> :Denite -direction=topleft file/rec<CR>
+"nnoremap <A-p>s :Denite -direction=topleft buffer<CR>

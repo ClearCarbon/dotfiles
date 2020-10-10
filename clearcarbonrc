@@ -1,9 +1,13 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+
 plugins=(
   git autojump gitfast git-extras rails dircycle docker extract zsh-autosuggestions
 )
+
+source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 
 source ~/dotfiles/shell/aliases
 source ~/dotfiles/shell/config
