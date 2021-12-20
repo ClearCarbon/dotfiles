@@ -1,0 +1,6 @@
+alias rdrop="bundle exec rails db:drop DISABLE_DATABASE_ENVIRONMENT_CHECK=1"
+alias rcreate="bundle exec rails db:create"
+alias rmigrate="bundle exec rails db:migrate"
+alias rreset="bundle exec rails db:create"
+alias rs="bundle exec rails server"
+alias rc="bundle exec rails console"

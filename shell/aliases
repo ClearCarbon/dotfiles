@@ -9,6 +9,8 @@ alias ll='ls -lh'
 alias lsa='ls -lah'
 alias l='ls -lah'
 
+alias commit-sizes='~/dotfiles/shell/scripts/git-commit-sizes.pl | sort -n -k 1'
+
 up() {
     str=""
     count=0

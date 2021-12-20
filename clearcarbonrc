@@ -7,6 +7,7 @@ plugins=(
 
 source ~/dotfiles/shell/aliases
 source ~/dotfiles/shell/config
+source ~/dotfiles/shell/rails
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
