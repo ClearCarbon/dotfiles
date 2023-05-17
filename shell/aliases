@@ -23,3 +23,10 @@ up() {
 }
 
 grp () { grep -Rni $1 . }
+
+brew-update() {
+    brew update
+    brew upgrade
+    brew autoremove
+    brew cleanup
+}

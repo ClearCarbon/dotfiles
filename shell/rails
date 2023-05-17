@@ -4,3 +4,5 @@ alias rmigrate="bundle exec rails db:migrate"
 alias rreset="bundle exec rails db:create"
 alias rs="bundle exec rails server"
 alias rc="bundle exec rails console"
+
+alias wp="bin/webpack-dev-server"
