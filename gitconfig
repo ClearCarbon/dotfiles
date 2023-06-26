@@ -1,6 +1,7 @@
 [user]
   name = NAME
   email = EMAIL
+  # signingkey = /Users/yourusername/.ssh/id_rsa
 [alias]
   co = checkout
   ci = commit
@@ -12,9 +13,6 @@
   aa = add --all
   lg = log --no-merges
   log-merges = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-  #hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-  #type = cat-file -t
-  #dump = cat-file -p
 [color]
   diff = auto
   status = auto
@@ -28,5 +26,10 @@
 [github]
   user = GITHUB
 [push]
-  default = current
-
+  default = upstream
+[init]
+  defaultBranch = main
+[gpg]
+  format = ssh
+[commit]
+  gpgsign = true
