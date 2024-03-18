@@ -5,5 +5,24 @@ alias rreset="bundle exec rails db:create"
 alias rs="bundle exec rails server"
 alias rc="bundle exec rails console"
 alias rv="cat .ruby-version"
+alias 1312='rubocop'
 
-alias wp="bin/webpack-dev-server"
+wp () {
+	if [[ -f bin/webpacker-dev-server ]]
+	then
+		bin/webpacker-dev-server
+	elif [[ -f bin/webpack-dev-server ]]
+	then
+		bin/webpack-dev-server
+	elif [[ -f bin/shakapacker-dev-server ]]
+	then
+		bin/shakapacker-dev-server
+	else
+		echo "Web/Shakapacker not found"
+	fi
+}
+
+alias sp='wp'
+
+# alias code-gems="code `rvm gemdir`"
+# alias cd-gems="cd `rvm gemdir`"
